@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.3.2
+
+### Changed
+
+- 安装器默认安装最新 Release ZIP，而不是从 Git 分支下载源码包。
+- 远程安装顺序改为：Release asset 优先，`install-manifest.txt` + raw.githubusercontent.com 逐文件下载作为后备。
+- 为远程下载增加重试和受限网络容错。
+
 ## v0.3.1
 
 ### Fixed

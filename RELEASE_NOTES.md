@@ -1,15 +1,15 @@
-# Release Notes — v0.3.1
+# Release Notes — v0.3.2
 
 ## Summary
 
-`EvoWrite` is an Agent Skill for natural, evidence-aware Evolutionary Computation paper writing. This patch release improves the public installer so one-command installation works even when GitHub tarball/codeload downloads are blocked.
+`EvoWrite` is an Agent Skill for natural, evidence-aware Evolutionary Computation paper writing. This patch makes the public installer resilient in restricted networks.
 
-## What changed in v0.3.1
+## What changed in v0.3.2
 
-- Added `install-manifest.txt` with the complete public file list.
-- Reworked `install.sh` to download each public file from `raw.githubusercontent.com` when installing from a ref.
-- Reworked `install.ps1` to use the same manifest-based remote installation strategy.
-- Kept local-source installation unchanged.
+- The installer now downloads the Release ZIP by default instead of a Git source archive.
+- If the Release archive is unavailable, it falls back to `install-manifest.txt` and per-file downloads from `raw.githubusercontent.com`.
+- Remote downloads now use retry logic.
+- Local installation from a cloned repository remains unchanged.
 
 ## Included in the v0.3 series
 
@@ -32,10 +32,10 @@
 
 ## Verification
 
-- Public repository created and verified.
+- Public repository and GitHub Pages were created and verified.
 - Release archive checked for skill name, install layout, raw corpus exclusion, private paths, and required files.
-- Public GitHub Pages page verified.
-- Installer fallback changed after detecting codeload/network failure; manifest-based raw download is the intended public installation path.
+- Public installer strategy was changed after live network tests showed source-archive and repeated raw downloads could fail while Release assets remained reachable.
+- The Release ZIP path is the intended default installation source for this version.
 
 ## Known limitations
 

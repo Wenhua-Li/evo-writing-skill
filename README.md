@@ -10,7 +10,7 @@ Distilled from **1,517 TEVC papers (1997–2023)** and a stratified review of 15
 
 [简体中文](README.zh-CN.md) · [Quick start](#quick-start) · [Examples](examples/) · [Docs](docs/)
 
-[![Release](https://img.shields.io/badge/release-v0.3.1-38bdf8)](https://github.com/Wenhua-Li/evo-writing-skill/releases)
+[![Release](https://img.shields.io/badge/release-v0.3.2-38bdf8)](https://github.com/Wenhua-Li/evo-writing-skill/releases)
 [![Agent Skills](https://img.shields.io/badge/agent--skills-compatible-14b8a6)](https://agentskills.io)
 [![License](https://img.shields.io/badge/license-MIT%20%2F%20CC--BY--4.0-blue)](LICENSE)
 [![Corpus](https://img.shields.io/badge/TEVC%20corpus-1997--2023-94a3b8)](references/evidence/methodology.md)
@@ -220,7 +220,7 @@ If EvoWrite helps your research workflow, please cite it:
   author  = {Li, Wenhua},
   title   = {EvoWrite: Natural Evolutionary Computation Paper Writing},
   year    = {2026},
-  version = {0.3.1},
+  version = {0.3.2},
   url     = {https://github.com/Wenhua-Li/evo-writing-skill},
   license = {MIT and CC-BY-4.0}
 }

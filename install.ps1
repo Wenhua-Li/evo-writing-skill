@@ -3,7 +3,7 @@ param(
   [ValidateSet('claude','codex','kimi','generic')]
   [string]$Agent = 'generic',
   [string]$Dest,
-  [string]$Ref = 'main',
+  [string]$Ref = 'v0.3.2',
   [switch]$Force,
   [switch]$DryRun,
   [switch]$Doctor
@@ -25,23 +25,58 @@ if ($Doctor) {
   exit 0
 }
 
+function Download-WithRetries([string]$Uri, [string]$OutFile) {
+  $Attempts = 0
+  while ($true) {
+    try {
+      Invoke-WebRequest -Uri $Uri -OutFile $OutFile -TimeoutSec 30
+      return
+    } catch {
+      $Attempts += 1
+      if ($Attempts -ge 5) { throw }
+      Start-Sleep -Seconds 2
+    }
+  }
+}
+
+function Install-FromManifest([string]$Temp) {
+  $Source = Join-Path $Temp 'repo'
+  New-Item -ItemType Directory -Force -Path $Source | Out-Null
+  $BaseUrl = "https://raw.githubusercontent.com/$Repo/$Ref"
+  Write-Host "Downloading EvoWrite file manifest from $BaseUrl..."
+  $ManifestFile = Join-Path $Temp 'manifest.txt'
+  Download-WithRetries "$BaseUrl/install-manifest.txt" $ManifestFile
+  foreach ($Rel in (Get-Content $ManifestFile)) {
+    $Rel = $Rel.Trim()
+    if (-not $Rel) { continue }
+    $Out = Join-Path $Source $Rel
+    New-Item -ItemType Directory -Force -Path (Split-Path -Parent $Out) | Out-Null
+    Download-WithRetries "$BaseUrl/$Rel" $Out
+  }
+  return $Source
+}
+
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 if (Test-Path (Join-Path $ScriptDir 'SKILL.md')) {
   $Source = $ScriptDir
 } else {
   $Temp = Join-Path ([IO.Path]::GetTempPath()) ("evowrite-" + [guid]::NewGuid().ToString('N'))
-  $Source = Join-Path $Temp 'repo'
-  New-Item -ItemType Directory -Force -Path $Source | Out-Null
-  $BaseUrl = "https://raw.githubusercontent.com/$Repo/$Ref"
-  Write-Host "Downloading EvoWrite file manifest from $BaseUrl..."
-  $Manifest = Invoke-RestMethod -Uri "$BaseUrl/install-manifest.txt"
-  foreach ($Rel in ($Manifest -split "`n")) {
-    $Rel = $Rel.Trim()
-    if (-not $Rel) { continue }
-    $Out = Join-Path $Source $Rel
-    New-Item -ItemType Directory -Force -Path (Split-Path -Parent $Out) | Out-Null
-    Invoke-WebRequest -Uri "$BaseUrl/$Rel" -OutFile $Out
+  $Source = $null
+  if ($Ref -ne 'main') {
+    $ZipUrl = "https://github.com/$Repo/releases/download/$Ref/evo-writing-skill-$Ref.zip"
+    $Archive = Join-Path $Temp 'evo-write.zip'
+    try {
+      Write-Host 'Downloading EvoWrite release archive...'
+      Download-WithRetries $ZipUrl $Archive
+      $Extract = Join-Path $Temp 'extract'
+      Expand-Archive -Path $Archive -DestinationPath $Extract
+      $Candidate = Join-Path $Extract 'evo-write'
+      if (Test-Path (Join-Path $Candidate 'SKILL.md')) { $Source = $Candidate }
+    } catch {
+      Write-Host 'Release archive unavailable; falling back to manifest download.'
+    }
   }
+  if (-not $Source) { $Source = Install-FromManifest $Temp }
 }
 
 $SourceSkill = Join-Path $Source 'SKILL.md'

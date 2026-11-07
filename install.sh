@@ -5,7 +5,7 @@ REPO="Wenhua-Li/evo-writing-skill"
 SKILL_NAME="evo-write"
 AGENT="generic"
 DEST=""
-REF="main"
+REF="v0.3.2"
 FORCE=0
 DRY_RUN=0
 DOCTOR=0
@@ -19,7 +19,7 @@ Usage: install.sh [options]
 Options:
   --agent NAME     claude | codex | kimi | generic (default: generic)
   --dest DIR       Skills directory (overrides --agent)
-  --ref REF        Git ref to install (default: main)
+  --ref REF        Git ref or release tag to install (default: v0.3.2)
   --force          Replace an existing evo-write installation after backup
   --dry-run        Show what would happen without changing files
   --doctor         Validate an existing installation
@@ -60,22 +60,55 @@ if [ "$DOCTOR" -eq 1 ]; then
   exit 0
 fi
 
+download_with_retries() {
+  curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 20 "$@"
+}
+
+download_from_manifest() {
+  local tmp="$1"
+  local base_url="https://raw.githubusercontent.com/$REPO/$REF"
+  local src="$tmp/repo"
+  mkdir -p "$src"
+  echo "Downloading EvoWrite file manifest from $base_url..."
+  download_with_retries -o "$tmp/manifest.txt" "$base_url/install-manifest.txt"
+  while IFS= read -r rel; do
+    [ -z "$rel" ] && continue
+    mkdir -p "$src/$(dirname "$rel")"
+    download_with_retries -o "$src/$rel" "$base_url/$rel"
+  done < "$tmp/manifest.txt"
+  printf '%s' "$src"
+}
+
+download_remote_source() {
+  local tmp="$1"
+  if [ "$REF" != "main" ]; then
+    local zip_url="https://github.com/$REPO/releases/download/$REF/evo-writing-skill-$REF.zip"
+    local archive="$tmp/evo-write.zip"
+    echo "Downloading EvoWrite release archive..."
+    if download_with_retries -o "$archive" "$zip_url"; then
+      mkdir -p "$tmp/extract"
+      if command -v unzip >/dev/null 2>&1; then
+        unzip -q "$archive" -d "$tmp/extract"
+      else
+        python -m zipfile -e "$archive" "$tmp/extract"
+      fi
+      if [ -f "$tmp/extract/evo-write/SKILL.md" ]; then
+        printf '%s' "$tmp/extract/evo-write"
+        return 0
+      fi
+    fi
+    echo "Release archive unavailable; falling back to manifest download." >&2
+  fi
+  download_from_manifest "$tmp"
+}
+
 SOURCE_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" 2>/dev/null && pwd || true)"
 if [ -n "$SOURCE_DIR" ] && [ -f "$SOURCE_DIR/SKILL.md" ]; then
   SRC="$SOURCE_DIR"
 else
   TMP="$(mktemp -d)"
   trap 'rm -rf "$TMP"' EXIT
-  BASE_URL="https://raw.githubusercontent.com/$REPO/$REF"
-  SRC="$TMP/repo"
-  mkdir -p "$SRC"
-  echo "Downloading EvoWrite file manifest from $BASE_URL..."
-  curl -fsSL "$BASE_URL/install-manifest.txt" -o "$TMP/manifest.txt"
-  while IFS= read -r rel; do
-    [ -z "$rel" ] && continue
-    mkdir -p "$SRC/$(dirname "$rel")"
-    curl -fsSL "$BASE_URL/$rel" -o "$SRC/$rel"
-  done < "$TMP/manifest.txt"
+  SRC="$(download_remote_source "$TMP")"
 fi
 
 if [ ! -f "$SRC/SKILL.md" ]; then

@@ -17,7 +17,7 @@ Options:
 ```bash
 --agent claude|codex|kimi|generic
 --dest /path/to/skills
---ref v0.3.1
+--ref v0.3.2
 --force
 --dry-run
 --doctor
@@ -36,7 +36,7 @@ Options:
 -Agent codex
 -Agent kimi
 -Dest "$HOME\.agents\skills"
--Ref v0.3.1
+-Ref v0.3.2
 -Force
 -DryRun
 -Doctor
@@ -82,7 +82,7 @@ Use evo-write. Rewrite this paragraph to remove AI tells and return only the rev
 Pin a release for stability:
 
 ```bash
-./install.sh --ref v0.3.1 --force
+./install.sh --ref v0.3.2 --force
 ```
 
 Or install the latest `main`:
