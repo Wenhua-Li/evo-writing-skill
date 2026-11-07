@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">EvoWrite social preview</title>
+  <desc id="desc">EvoWrite social card with a concise before and after example.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#020617"/><stop offset="1" stop-color="#134e4a"/></linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <circle cx="1090" cy="120" r="260" fill="#38bdf8" opacity=".08"/>
+  <path d="M72 548C156 432 236 352 322 282C394 224 462 158 526 82" fill="none" stroke="url(#front)" stroke-width="18" stroke-linecap="round" filter="url(#glow)"/>
+  <g fill="#f8fafc" filter="url(#glow)"><circle cx="72" cy="548" r="16"/><circle cx="156" cy="432" r="13"/><circle cx="236" cy="352" r="12"/><circle cx="322" cy="282" r="13"/><circle cx="526" cy="82" r="16"/></g>
+  <text x="592" y="138" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="76" font-weight="760">EvoWrite</text>
+  <text x="596" y="200" fill="#bae6fd" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30">Natural writing for Evolutionary Computation papers</text>
+  <text x="596" y="246" fill="#94a3b8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22">Anti-AI tells · Anti-defensive prose · Evidence-aware EC writing</text>
+  <g transform="translate(590 318)">
+    <rect width="596" height="218" rx="24" fill="#0f172a" stroke="#1e293b"/>
+    <rect x="24" y="24" width="252" height="170" rx="16" fill="#111827" stroke="#334155"/>
+    <rect x="320" y="24" width="252" height="170" rx="16" fill="#052e2b" stroke="#14b8a6" stroke-opacity=".45"/>
+    <text x="48" y="66" fill="#94a3b8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="650">Before</text>
+    <text x="48" y="106" fill="#cbd5e1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">“may potentially</text>
+    <text x="48" y="140" fill="#cbd5e1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">significantly outperform...”</text>
+    <text x="344" y="66" fill="#5eead4" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="650">After</text>
+    <text x="344" y="106" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">“On the tested problems,</text>
+    <text x="344" y="140" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">the proposed method...”</text>
+  </g>
+</svg>

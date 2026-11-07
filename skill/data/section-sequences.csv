@@ -1,0 +1,101 @@
+sequence,documents,share_pct
+introduction > method > results > conclusion,119,7.84
+introduction > method > conclusion,98,6.46
+introduction > method > experiments > conclusion,58,3.82
+introduction > related_work > method > results > conclusion,45,2.97
+introduction > preliminaries > method > results > conclusion,40,2.64
+introduction > conclusion,38,2.5
+introduction > method > experiments > results > conclusion,34,2.24
+introduction > method > results > discussion > conclusion,33,2.18
+introduction > results > conclusion,28,1.85
+introduction > related_work > method > conclusion,27,1.78
+introduction > related_work > method > experiments > results > conclusion,27,1.78
+introduction > method > discussion > conclusion,24,1.58
+introduction > preliminaries > method > conclusion,22,1.45
+introduction > preliminaries > method > experiments > conclusion,22,1.45
+introduction > method,20,1.32
+introduction > method > results > experiments > conclusion,19,1.25
+introduction,16,1.05
+introduction > results > method > conclusion,14,0.92
+introduction > method > experiments > discussion > conclusion,13,0.86
+introduction > related_work > method > results > discussion > conclusion,13,0.86
+introduction > experiments > conclusion,12,0.79
+introduction > related_work > method > discussion > conclusion,12,0.79
+introduction > preliminaries > method > experiments > results > conclusion,11,0.73
+introduction > preliminaries > conclusion,11,0.73
+introduction > preliminaries > method > results > discussion > conclusion,11,0.73
+introduction > method > results,10,0.66
+method > introduction > results > conclusion,10,0.66
+introduction > discussion,9,0.59
+introduction > method > results > discussion,9,0.59
+method > introduction > conclusion,8,0.53
+introduction > method > discussion > experiments > conclusion,8,0.53
+introduction > experiments > method > conclusion,8,0.53
+introduction > experiments > results > conclusion,8,0.53
+introduction > preliminaries > related_work > method > results > conclusion,8,0.53
+introduction > related_work > preliminaries > method > results > conclusion,8,0.53
+introduction > related_work > method > experiments > conclusion,8,0.53
+introduction > related_work > results > conclusion,8,0.53
+introduction > method > discussion,7,0.46
+introduction > preliminaries > method > results > experiments > conclusion,7,0.46
+introduction > related_work > method > experiments > discussion > conclusion,7,0.46
+introduction > preliminaries > method > discussion > conclusion,7,0.46
+introduction > preliminaries > related_work > method > experiments > results > conclusion,7,0.46
+introduction > preliminaries > method > results,6,0.4
+introduction > method > experiments > results > discussion > conclusion,6,0.4
+introduction > method > related_work > results > conclusion,6,0.4
+introduction > discussion > conclusion,6,0.4
+introduction > preliminaries > related_work > method > experiments > conclusion,6,0.4
+introduction > preliminaries > method > discussion > results > conclusion,6,0.4
+method > results > conclusion,6,0.4
+method > conclusion,6,0.4
+introduction > preliminaries > method > experiments > discussion > conclusion,6,0.4
+introduction > method > preliminaries > results > discussion > conclusion,5,0.33
+introduction > method > preliminaries > results > conclusion,5,0.33
+introduction > preliminaries > method,5,0.33
+method > introduction > experiments > conclusion,5,0.33
+introduction > preliminaries,5,0.33
+introduction > related_work > method > experiments > results > discussion > conclusion,5,0.33
+introduction > preliminaries > method > experiments > results > discussion > conclusion,5,0.33
+method > introduction > related_work > results > conclusion,5,0.33
+introduction > related_work > preliminaries > method > conclusion,5,0.33
+introduction > method > experiments,4,0.26
+introduction > results > discussion > conclusion,4,0.26
+introduction > method > theory > results > conclusion,4,0.26
+introduction > preliminaries > experiments > conclusion,4,0.26
+introduction > experiments > method > results > conclusion,4,0.26
+method > introduction > experiments > results > conclusion,4,0.26
+introduction > preliminaries > results > conclusion,4,0.26
+preliminaries > method > conclusion,4,0.26
+introduction > method > related_work > conclusion,4,0.26
+introduction > related_work > preliminaries > method > experiments > conclusion,4,0.26
+method > results > discussion > conclusion,4,0.26
+introduction > related_work > conclusion,4,0.26
+introduction > preliminaries > experiments > discussion > conclusion,4,0.26
+method > introduction > preliminaries > results > conclusion,4,0.26
+method > introduction > results > experiments > conclusion,4,0.26
+introduction > method > preliminaries > conclusion,4,0.26
+introduction > related_work > method > results > experiments > conclusion,4,0.26
+method,3,0.2
+introduction > preliminaries > method > results > discussion,3,0.2
+introduction > experiments > method,3,0.2
+introduction > method > experiments > conclusion > results,3,0.2
+introduction > results > discussion,3,0.2
+introduction > results,3,0.2
+introduction > results > experiments > conclusion,3,0.2
+introduction > preliminaries > experiments > method > results > conclusion,3,0.2
+introduction > preliminaries > experiments > method > conclusion,3,0.2
+introduction > experiments,3,0.2
+method > introduction > results > discussion > conclusion,3,0.2
+method > introduction > preliminaries > results > discussion > conclusion,3,0.2
+introduction > preliminaries > results > method > conclusion,3,0.2
+introduction > related_work > preliminaries > method > discussion > conclusion,3,0.2
+introduction > method > theory > conclusion,3,0.2
+introduction > related_work > experiments > results > conclusion,3,0.2
+introduction > method > experiments > discussion,3,0.2
+introduction > method > results > experiments > discussion > conclusion,3,0.2
+introduction > method > discussion > results > conclusion,3,0.2
+introduction > preliminaries > method > experiments,3,0.2
+introduction > method > related_work > experiments > conclusion,3,0.2
+introduction > related_work > preliminaries > discussion > conclusion,3,0.2
+method > preliminaries > results > conclusion,3,0.2

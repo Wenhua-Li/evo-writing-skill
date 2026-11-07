@@ -3,7 +3,7 @@ name: evo-write
 description: >-
   Natural, evidence-aware writing and humanizing for Evolutionary Computation papers. EvoWrite removes AI tells, template prose, defensive writing, and translated academic phrasing while preserving claims, evidence, EC terminology, and the author's voice. Use for TEVC/EC/EA/EMO abstracts, introductions, related work, methods, experiments, conclusions, full-section rewrites, drafting from research notes, author voice matching, and pre-submission checks. Returns English paper text by default; diagnostics are provided only when requested. Never fabricate citations, experiments, numbers, statistical tests, complexity results, theorems, or conclusions.
 metadata:
-  version: "0.3.3"
+  version: "0.4.0"
 ---
 
 # EvoWrite
@@ -51,18 +51,18 @@ metadata:
 
 ### Audit
 
-用户明确要求“审查、诊断、风险报告、投稿前检查”时，才使用报告格式。可参考 `references/style/claim-calibration.md` 和 `templates/submission-checklist.md`。
+用户明确要求“审查、诊断、风险报告、投稿前检查”时，才使用报告格式。可参考 `skill/references/style/claim-calibration.md` 和 `skill/templates/submission-checklist.md`。
 
 ## 2. 最小路由
 
 按任务读取最少文件，不要一次加载全部规则。
 
-- 去 AI 味/防御性改写：`references/style/ec-ai-tells.md`、`references/style/anti-defensive-ec.md`、`references/style/human-scholarly-voice.md`
-- 从零起草：`references/workflow.md`、相应 `article-types/`、相应 `sections/`、相应 `domains/`
-- 多目标或问题环境：`references/domains/multiobjective.md`、`references/domains/problem-environments.md`
-- 方法与术语：`references/domains/method-families.md`、`references/style/terminology.md`
-- 投稿前 Audit：`references/style/claim-calibration.md`、`templates/submission-checklist.md`
-- 语料证据边界：`references/evidence/`
+- 去 AI 味/防御性改写：`skill/references/style/ec-ai-tells.md`、`skill/references/style/anti-defensive-ec.md`、`skill/references/style/human-scholarly-voice.md`
+- 从零起草：`skill/references/workflow.md`、相应 `article-types/`、相应 `sections/`、相应 `domains/`
+- 多目标或问题环境：`skill/references/domains/multiobjective.md`、`skill/references/domains/problem-environments.md`
+- 方法与术语：`skill/references/domains/method-families.md`、`skill/references/style/terminology.md`
+- 投稿前 Audit：`skill/references/style/claim-calibration.md`、`skill/templates/submission-checklist.md`
+- 语料证据边界：`skill/references/evidence/`
 
 ## 3. 重写管线
 

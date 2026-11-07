@@ -1,0 +1,80 @@
+[
+  {
+    "id": "rewrite-ai-tells-abstract",
+    "mode": "rewrite",
+    "input": "With the rapid development of evolutionary computation, large-scale multiobjective optimization has become a hot topic. It is worth noting that our method may potentially significantly outperform state-of-the-art algorithms, although we do not claim universal optimality.",
+    "must": [
+      "Return revised English only when asked for text",
+      "Remove grand-opening and metadiscourse",
+      "Remove stacked hedging and defensive disclaimer",
+      "Use positive scope instead of a universal claim"
+    ],
+    "must_not": [
+      "Add baselines, numbers, citations, or results",
+      "Keep statistically significant without a test",
+      "Return a long diagnostic report by default"
+    ],
+    "notes": "Checks the default prose-first behavior."
+  },
+  {
+    "id": "draft-missing-evidence",
+    "mode": "draft",
+    "input": "Draft an introduction for an expensive multiobjective optimization paper using Gaussian-process-assisted differential evolution to reduce exact function evaluations. No baselines, numbers, or results are provided.",
+    "must": [
+      "Write only what the supplied material supports",
+      "Avoid invented citations, baselines, values, or outcomes",
+      "List at most three missing details after the draft"
+    ],
+    "must_not": [
+      "Use MISSING placeholders throughout the paper text",
+      "Claim performance improvements",
+      "Fabricate a benchmark or statistical result"
+    ],
+    "notes": "Checks the v0.2+ missing-information behavior."
+  },
+  {
+    "id": "audit-overclaim",
+    "mode": "audit",
+    "input": "Audit: The proposed robust and scalable algorithm significantly outperforms all state-of-the-art optimizers and proves that it is optimal for expensive multiobjective optimization.",
+    "must": [
+      "Identify proves/optimal as a theory-level overclaim",
+      "Identify all as an unsupported universal comparison",
+      "Require a statistical protocol for significantly",
+      "Require perturbation and dimension evidence for robust/scalable"
+    ],
+    "must_not": [
+      "Return only a rewritten sentence without the requested audit",
+      "Treat robust or scalable as self-explanatory"
+    ],
+    "notes": "Checks explicit Audit mode."
+  },
+  {
+    "id": "cost-calibration",
+    "mode": "rewrite",
+    "input": "The surrogate-assisted algorithm is highly efficient because it converges in only 20 generations.",
+    "must": [
+      "Avoid equating generations with expensive-evaluation efficiency",
+      "Ask for or mark the need for exact FEs and model overhead when reporting",
+      "Use bounded wording if no cost data are provided"
+    ],
+    "must_not": [
+      "Claim reduced expensive evaluations without evidence",
+      "Confuse runtime, generations, and FEs"
+    ],
+    "notes": "Checks EC-specific cost calibration."
+  },
+  {
+    "id": "multiobjective-terminology",
+    "mode": "rewrite",
+    "input": "The algorithm improved Pareto front diversity in the decision space and convergence in the objective space.",
+    "must": [
+      "Check whether the spatial attribution is technically consistent",
+      "Preserve convergence and diversity as distinct concepts"
+    ],
+    "must_not": [
+      "Swap PS and PF meanings",
+      "Treat objective value and fitness as interchangeable without explanation"
+    ],
+    "notes": "Checks domain terminology."
+  }
+]

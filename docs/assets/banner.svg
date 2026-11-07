@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 500" role="img" aria-labelledby="title desc">
+  <title id="title">EvoWrite banner</title>
+  <desc id="desc">A refined dark academic banner for EvoWrite, combining a Pareto front with evolutionary structure.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="0.52" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#042f2e"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="78%" cy="28%" r="52%">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity=".34"/>
+      <stop offset=".48" stop-color="#14b8a6" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset=".56" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#a5f3fc"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#f8fafc" stop-opacity=".055"/>
+    </linearGradient>
+    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse">
+      <path d="M54 0H0v54" fill="none" stroke="#94a3b8" stroke-opacity=".08"/>
+    </pattern>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="500" fill="url(#bg)"/>
+  <rect width="1600" height="500" fill="url(#grid)" opacity=".55"/>
+  <rect width="1600" height="500" fill="url(#glowA)"/>
+  <path d="M0 470C260 430 385 410 560 385C780 354 930 270 1060 190C1210 98 1390 58 1600 38V500H0Z" fill="#14b8a6" opacity=".055"/>
+
+  <g transform="translate(980 58)">
+    <g opacity=".48" fill="none" stroke-linecap="round">
+      <path d="M28 36C-44 104-44 268 28 336" stroke="#64748b" stroke-width="10"/>
+      <path d="M468 36C540 104 540 268 468 336" stroke="#64748b" stroke-width="10"/>
+      <path d="M88 36C30 104 30 268 88 336" stroke="#475569" stroke-width="5"/>
+      <path d="M408 36C466 104 466 268 408 336" stroke="#475569" stroke-width="5"/>
+      <path d="M48 92H448M48 184H448M48 276H448" stroke="#64748b" stroke-opacity=".32" stroke-width="4"/>
+    </g>
+    <path d="M18 338C108 274 190 225 268 178C344 132 414 78 478 18" fill="none" stroke="url(#front)" stroke-width="18" stroke-linecap="round" filter="url(#softGlow)"/>
+    <g fill="#f8fafc" filter="url(#softGlow)">
+      <circle cx="18" cy="338" r="17"/><circle cx="108" cy="274" r="14"/><circle cx="190" cy="225" r="12"/><circle cx="268" cy="178" r="14"/><circle cx="344" cy="132" r="11"/><circle cx="478" cy="18" r="17"/>
+    </g>
+  </g>
+
+  <g transform="translate(112 78)">
+    <rect x="0" y="0" width="164" height="42" rx="21" fill="url(#glass)" stroke="#67e8f9" stroke-opacity=".28"/>
+    <circle cx="25" cy="21" r="7" fill="#5eead4"/>
+    <text x="43" y="29" fill="#bae6fd" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="650">v0.4.0 · Agent Skill</text>
+    <text x="0" y="132" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="96" font-weight="760" letter-spacing="-2">EvoWrite</text>
+    <text x="2" y="204" fill="#bae6fd" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="35" font-weight="500">Natural writing for Evolutionary Computation papers</text>
+    <text x="2" y="257" fill="#94a3b8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24">Evidence-aware rewriting without defensive or AI-sounding prose</text>
+  </g>
+
+  <g transform="translate(112 382)">
+    <rect width="752" height="58" rx="18" fill="url(#glass)" stroke="#f8fafc" stroke-opacity=".10"/>
+    <g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="620">
+      <text x="26" y="37" fill="#5eead4">TEVC-informed</text>
+      <text x="176" y="37" fill="#e2e8f0">Anti-AI tells</text>
+      <text x="318" y="37" fill="#e2e8f0">Anti-defensive writing</text>
+      <text x="563" y="37" fill="#e2e8f0">Voice matching</text>
+    </g>
+  </g>
+</svg>

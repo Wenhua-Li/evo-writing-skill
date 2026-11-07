@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">EvoWrite logo</title>
+  <desc id="desc">EvoWrite mark with a Pareto front and evolutionary helix.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#020617"/><stop offset="1" stop-color="#134e4a"/></linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="512" height="512" rx="118" fill="url(#bg)"/>
+  <g opacity=".18" stroke="#94a3b8" fill="none">
+    <path d="M126 118c-60 58-60 218 0 276M386 118c60 58 60 218 0 276"/>
+    <path d="M164 118c-38 58-38 218 0 276M348 118c38 58 38 218 0 276"/>
+  </g>
+  <path d="M116 382C184 320 242 275 302 220C348 178 382 142 404 112" fill="none" stroke="url(#front)" stroke-width="24" stroke-linecap="round" filter="url(#glow)"/>
+  <g fill="#f8fafc" filter="url(#glow)">
+    <circle cx="116" cy="382" r="19"/><circle cx="184" cy="320" r="16"/><circle cx="242" cy="275" r="14"/><circle cx="302" cy="220" r="15"/><circle cx="404" cy="112" r="19"/>
+  </g>
+  <text x="256" y="452" text-anchor="middle" fill="#bae6fd" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="42" font-weight="700">EvoWrite</text>
+</svg>

@@ -6,45 +6,107 @@
   <title>EvoWrite — Natural Evolutionary Computation Paper Writing</title>
   <meta name="description" content="Agent skill for natural, evidence-aware Evolutionary Computation paper writing.">
   <style>
-    :root{--bg:#020617;--panel:#0f172a;--text:#e2e8f0;--muted:#94a3b8;--teal:#14b8a6;--blue:#38bdf8;--line:#1e293b}
-    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}
-    .wrap{max-width:1120px;margin:auto;padding:32px 20px}.hero{padding:56px 0 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-    h1{font-size:64px;line-height:1;margin:0 0 18px}h2{margin-top:0}.tag{font-size:24px;color:#bae6fd}.muted{color:var(--muted)}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    pre{background:#020617;border:1px solid var(--line);border-radius:14px;padding:16px;overflow:auto}.btn{display:inline-block;background:linear-gradient(90deg,var(--teal),var(--blue));color:#00111a;text-decoration:none;padding:12px 18px;border-radius:12px;font-weight:700;margin-right:10px}
-    .btn.secondary{background:var(--panel);color:var(--text);border:1px solid var(--line)}img.logo{width:100%;max-width:420px;border-radius:28px;box-shadow:0 20px 60px #0008}
-    @media(max-width:800px){.hero,.grid{grid-template-columns:1fr}h1{font-size:44px}}
+    :root{--bg:#020617;--panel:#0f172a;--panel2:#111827;--text:#e2e8f0;--muted:#94a3b8;--teal:#14b8a6;--cyan:#38bdf8;--line:#1e293b;--soft:#5eead4;--radius:24px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,#134e4a66,transparent 34%),radial-gradient(circle at 8% 20%,#38bdf820,transparent 28%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.65}
+    a{color:#7dd3fc;text-decoration:none}a:hover{color:#a5f3fc}.wrap{max-width:1180px;margin:auto;padding:0 24px}.nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(16px);background:#020617d9;border-bottom:1px solid var(--line)}
+    .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px}.brand img{width:34px;height:34px;border-radius:10px}.links{display:flex;gap:22px;color:var(--muted);font-size:14px}.links a{color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:86px 0 64px}.pill{display:inline-flex;gap:10px;align-items:center;padding:8px 14px;border:1px solid #14b8a655;border-radius:999px;background:#14b8a614;color:#99f6e4;font-size:14px}.pill:before{content:"";width:8px;height:8px;border-radius:99px;background:var(--soft);box-shadow:0 0 16px var(--soft)}
+    h1{font-size:72px;line-height:.98;letter-spacing:-3px;margin:24px 0 22px}.lead{font-size:25px;color:#bae6fd;max-width:720px}.muted{color:var(--muted)}.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border-radius:14px;font-weight:750;border:1px solid transparent;transition:.2s}.btn.primary{background:linear-gradient(90deg,var(--teal),var(--cyan));color:#02131c}.btn.secondary{border-color:var(--line);background:#0f172acc;color:var(--text)}.btn:hover{transform:translateY(-2px);box-shadow:0 16px 42px #14b8a622}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.stat{padding:18px;border:1px solid var(--line);border-radius:18px;background:#0f172ab8}.stat b{display:block;font-size:26px;color:#f8fafc}.stat span{font-size:13px;color:var(--muted)}
+    .heroCard{position:relative;border:1px solid #38bdf833;border-radius:32px;padding:26px;background:linear-gradient(145deg,#0f172ae6,#042f2e99);box-shadow:0 30px 90px #0009;overflow:hidden}.heroCard:before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 180deg,transparent,#38bdf822,transparent,#14b8a622,transparent);animation:spin 16s linear infinite;opacity:.5}.heroCard>*{position:relative}.heroCard img{width:100%;display:block;border-radius:22px;border:1px solid #ffffff14}.chip{display:inline-block;margin:12px 10px 0 0;padding:8px 12px;border-radius:999px;background:#02061799;border:1px solid var(--line);color:#cbd5e1;font-size:13px}
+    section{padding:58px 0}.sectionTitle{font-size:38px;letter-spacing:-1px;margin:0 0 12px}.sectionLead{color:var(--muted);max-width:760px}.card{background:#0f172ad9;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 18px 60px #0005}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .tabs{display:flex;gap:10px;margin:20px 0}.tab{padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:#020617;color:var(--muted);cursor:pointer}.tab.active{background:#14b8a622;color:#99f6e4;border-color:#14b8a666}.quote{font-family:ui-serif,Georgia,serif;font-size:18px}.bad{color:#cbd5e1}.good{color:#f8fafc}.arrow{text-align:center;font-size:30px;color:#5eead4}
+    .useCard h3,.case h3{margin-top:0}.useCard p,.case p{color:var(--muted)}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:24px}.step{padding:18px;border-radius:18px;background:#02061799;border:1px solid var(--line);position:relative}.step b{color:#5eead4;display:block;margin-bottom:8px}.domain{display:inline-block;margin:6px;padding:9px 12px;border-radius:999px;background:#0f172a;border:1px solid var(--line);color:#cbd5e1}
+    pre{background:#020617;border:1px solid var(--line);border-radius:16px;padding:18px;overflow:auto;position:relative}code{color:#d1fae5}.copy{position:absolute;right:10px;top:10px;border:1px solid var(--line);background:#0f172a;color:#cbd5e1;border-radius:10px;padding:6px 9px;cursor:pointer}.copy:hover{color:#fff;border-color:#38bdf8}
+    table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:18px}th,td{padding:16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:#99f6e4;background:#0f172a}td{color:#cbd5e1}.evidence{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}.big{font-size:34px;font-weight:800;color:#f8fafc}
+    details{border:1px solid var(--line);background:#0f172ad9;border-radius:16px;padding:18px;margin:12px 0}summary{cursor:pointer;font-weight:700}.footer{border-top:1px solid var(--line);padding:28px 0 42px;color:var(--muted)}
+    .fade{animation:fadeUp .7s ease both}.d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.float{animation:float 5s ease-in-out infinite}@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes spin{to{transform:rotate(360deg)}}
+    @media(max-width:900px){.hero,.grid2{grid-template-columns:1fr}.grid4,.grid3,.steps,.evidence{grid-template-columns:1fr 1fr}h1{font-size:50px}.links{display:none}}@media(max-width:560px){.grid4,.grid3,.steps,.evidence,.stats{grid-template-columns:1fr}h1{font-size:42px}.hero{padding-top:48px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
-  <main class="wrap">
+  <nav class="nav"><div class="wrap"><a class="brand" href="#top"><img src="assets/logo.svg" alt="EvoWrite logo">EvoWrite</a><div class="links"><a href="#cases">Cases</a><a href="#install">Install</a><a href="#evidence">Evidence</a><a href="#faq">FAQ</a><a href="https://github.com/Wenhua-Li/evo-writing-skill">GitHub</a></div></div></nav>
+
+  <main id="top" class="wrap">
     <section class="hero">
       <div>
-        <h1>EvoWrite</h1>
-        <p class="tag">Natural, evidence-aware writing for Evolutionary Computation papers.</p>
-        <p class="muted">Distilled from 1,517 TEVC papers (1997–2023). Removes AI tells and defensive prose while preserving claims, evidence, EC terminology, and your voice.</p>
-        <p><a class="btn" href="https://github.com/Wenhua-Li/evo-writing-skill">GitHub</a><a class="btn secondary" href="quickstart.html">Quick start</a></p>
+        <span class="pill fade">Agent Skill for Evolutionary Computation</span>
+        <h1 class="fade d1">EvoWrite</h1>
+        <p class="lead fade d2">Natural, evidence-aware writing for EC papers.</p>
+        <p class="muted fade d2">Distilled from 1,517 TEVC papers (1997–2023). EvoWrite removes AI tells and defensive prose while preserving claims, evidence, EC terminology, and your voice.</p>
+        <div class="cta fade d3"><a class="btn primary" href="#install">Install EvoWrite</a><a class="btn secondary" href="#cases">See cases</a><a class="btn secondary" href="https://github.com/Wenhua-Li/evo-writing-skill">GitHub</a></div>
+        <div class="stats fade d3"><div class="stat"><b>1,517</b><span>TEVC papers</span></div><div class="stat"><b>150</b><span>reviewed exemplars</span></div><div class="stat"><b>0</b><span>invented evidence</span></div></div>
       </div>
-      <img class="logo" src="../assets/social-preview.svg" alt="EvoWrite social preview">
+      <div class="heroCard fade d2 float"><img src="assets/social-preview.svg" alt="EvoWrite social preview"><span class="chip">Anti-AI tells</span><span class="chip">Anti-defensive prose</span><span class="chip">EC claim calibration</span><span class="chip">Voice matching</span></div>
     </section>
 
-    <section class="grid">
-      <div class="card"><h2>Before</h2><p class="muted">With the rapid development of evolutionary computation, large-scale multiobjective optimization has become a hot topic. It is worth noting that our method may potentially significantly outperform state-of-the-art algorithms, although we do not claim universal optimality.</p></div>
-      <div class="card"><h2>After</h2><p>Large-scale multiobjective optimization remains challenging for evolutionary algorithms as the number of decision variables increases. On the tested problems, the proposed algorithm outperforms the state-of-the-art algorithms included in the comparison.</p></div>
+    <section id="cases">
+      <h2 class="sectionTitle">See what changes</h2>
+      <p class="sectionLead">Real behavior from the public verification path: fewer AI tells, no defensive disclaimer, and no invented evidence.</p>
+      <div class="tabs"><button class="tab active" data-case="intro">Introduction</button><button class="tab" data-case="audit">Overclaim</button><button class="tab" data-case="cost">Cost claim</button></div>
+      <div class="grid2">
+        <div class="card"><h3>Before</h3><p id="beforeText" class="quote bad">With the rapid development of evolutionary computation, large-scale multiobjective optimization has become a hot topic. It is worth noting that our proposed method may potentially significantly outperform state-of-the-art algorithms, although we do not claim that it is universally optimal for all problems.</p></div>
+        <div class="card"><h3>After</h3><p id="afterText" class="quote good">Large-scale multiobjective optimization remains challenging for evolutionary algorithms as the number of decision variables increases. On the tested problems, the proposed algorithm outperforms the state-of-the-art algorithms included in the comparison.</p></div>
+      </div>
+      <p style="margin-top:18px"><a href="cases.html">More writing cases →</a></p>
     </section>
 
-    <section class="card" style="margin-top:24px">
-      <h2>Install</h2>
-      <pre><code>npx skills add Wenhua-Li/evo-writing-skill</code></pre>
-      <pre><code>curl -fsSL https://raw.githubusercontent.com/Wenhua-Li/evo-writing-skill/main/install.sh | bash</code></pre>
+    <section>
+      <h2 class="sectionTitle">Four ways to use it</h2>
+      <div class="grid4" style="margin-top:24px">
+        <div class="card useCard"><h3>Rewrite</h3><p>Remove AI tells, boilerplate, repetitive transitions, and defensive framing from an existing EC draft.</p></div>
+        <div class="card useCard"><h3>Draft</h3><p>Turn research notes into prose without inventing baselines, citations, statistics, or outcomes.</p></div>
+        <div class="card useCard"><h3>Voice match</h3><p>Match sentence rhythm, terminology, punctuation, and directness from your own writing sample.</p></div>
+        <div class="card useCard"><h3>Audit</h3><p>Check significance, robustness, scalability, efficiency, optimality, and cost claims only when requested.</p></div>
+      </div>
     </section>
 
-    <section class="grid" style="margin-top:24px">
-      <div class="card"><h2>Anti-AI tells</h2><p class="muted">Removes grand openings, forced contribution lists, mechanical RQs, empty importance claims, repeated transitions, and template-like results prose.</p></div>
-      <div class="card"><h2>Anti-defensive writing</h2><p class="muted">Replaces repeated disclaimers with positive scope while keeping necessary methodological boundaries once, in the right section.</p></div>
-      <div class="card"><h2>EC evidence calibration</h2><p class="muted">Distinguishes FEs, runtime, model-training cost, convergence, diversity, feasibility, objective value, and fitness.</p></div>
-      <div class="card"><h2>Author voice matching</h2><p class="muted">Matches sentence rhythm, transitions, terminology, punctuation, and directness from your own English sample.</p></div>
+    <section>
+      <h2 class="sectionTitle">Built for EC evidence</h2>
+      <p class="sectionLead">A generic humanizer can make prose smoother. EvoWrite also checks whether the claim belongs to the right EC evidence category.</p>
+      <div class="steps"><div class="step"><b>Preserve</b><span>claims, citations, values, negative results</span></div><div class="step"><b>Remove</b><span>AI tells and boilerplate</span></div><div class="step"><b>Rewrite</b><span>defensive framing into positive scope</span></div><div class="step"><b>Calibrate</b><span>FEs, runtime, convergence, diversity, feasibility</span></div><div class="step"><b>Return</b><span>natural paper text by default</span></div></div>
+      <p style="margin-top:24px"><span class="domain">multiobjective</span><span class="domain">many-objective</span><span class="domain">constrained</span><span class="domain">dynamic</span><span class="domain">expensive</span><span class="domain">surrogate-assisted</span><span class="domain">large-scale</span><span class="domain">multimodal</span><span class="domain">combinatorial</span><span class="domain">neuroevolution</span></p>
+    </section>
+
+    <section id="install">
+      <h2 class="sectionTitle">Install in under a minute</h2>
+      <div class="grid2">
+        <div class="card"><h3>Skills CLI</h3><pre><button class="copy" data-copy="npx skills add Wenhua-Li/evo-writing-skill">Copy</button><code>npx skills add Wenhua-Li/evo-writing-skill</code></pre></div>
+        <div class="card"><h3>Bash</h3><pre><button class="copy" data-copy="curl -fsSL https://raw.githubusercontent.com/Wenhua-Li/evo-writing-skill/main/install.sh | bash">Copy</button><code>curl -fsSL https://raw.githubusercontent.com/Wenhua-Li/evo-writing-skill/main/install.sh | bash</code></pre></div>
+      </div>
+      <p><a href="install.html">Installation options and verification →</a></p>
+    </section>
+
+    <section>
+      <h2 class="sectionTitle">Why not just use a generic humanizer?</h2>
+      <div class="card"><table><tr><th>Generic humanizer</th><th>EvoWrite</th></tr><tr><td>Removes general AI tells</td><td>Removes general and EC-specific AI tells</td></tr><tr><td>Keeps prose factual</td><td>Keeps prose factual and technically calibrated for EC</td></tr><tr><td>No cost model</td><td>Distinguishes FEs, wall-clock runtime, model-training cost, and complexity</td></tr><tr><td>One style for every field</td><td>Supports algorithm, theory, benchmark, survey, and application papers</td></tr></table></div>
+    </section>
+
+    <section id="evidence">
+      <h2 class="sectionTitle">Evidence, not vibes</h2>
+      <div class="evidence"><div class="card"><div class="big">1997–2023</div><p class="muted">TEVC evidence window</p></div><div class="card"><div class="big">1,358</div><p class="muted">quality-controlled papers used for language analysis</p></div><div class="card"><div class="big">No raw corpus</div><p class="muted">public package contains aggregate evidence and original guidance</p></div></div>
+      <p class="muted" style="margin-top:18px">EvoWrite is independent of IEEE and TEVC editorial policy. It does not guarantee publication or AI-detector outcomes.</p>
+    </section>
+
+    <section id="faq">
+      <h2 class="sectionTitle">FAQ</h2>
+      <details><summary>Does EvoWrite try to bypass AI detectors?</summary><p class="muted">No. The goal is natural prose for human reviewers, not detector evasion.</p></details>
+      <details><summary>Does the public repository include TEVC papers?</summary><p class="muted">No. It includes aggregate statistics, scripts, original rules, examples, and templates—not the source papers.</p></details>
+      <details><summary>Will it invent missing experiments or citations?</summary><p class="muted">No. Unsupported claims are removed, narrowed, or listed as missing information outside the paper text.</p></details>
     </section>
   </main>
+
+  <footer class="footer"><div class="wrap"><a href="https://github.com/Wenhua-Li/evo-writing-skill">GitHub</a> · <a href="https://github.com/Wenhua-Li/evo-writing-skill/releases">Releases</a> · <a href="comparison.md">Comparison</a> · MIT scripts / CC BY 4.0 content</div></footer>
+
+  <script>
+    const cases={
+      intro:{before:"With the rapid development of evolutionary computation, large-scale multiobjective optimization has become a hot topic. It is worth noting that our proposed method may potentially significantly outperform state-of-the-art algorithms, although we do not claim that it is universally optimal for all problems.",after:"Large-scale multiobjective optimization remains challenging for evolutionary algorithms as the number of decision variables increases. On the tested problems, the proposed algorithm outperforms the state-of-the-art algorithms included in the comparison."},
+      audit:{before:"The proposed robust and scalable algorithm significantly outperforms all state-of-the-art optimizers and proves that it is optimal for expensive multiobjective optimization.",after:"On the tested expensive multiobjective problems, the proposed algorithm outperforms the compared baselines in the reported indicator, with statistically significant differences under the stated test protocol."},
+      cost:{before:"The surrogate-assisted algorithm is highly efficient because it converges in only 20 generations.",after:"The surrogate-assisted algorithm reaches the reported solution quality within the stated budget of exact function evaluations; model-training overhead is reported separately."}
+    };
+    document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const c=cases[btn.dataset.case];document.getElementById('beforeText').textContent=c.before;document.getElementById('afterText').textContent=c.after}));
+    document.querySelectorAll('.copy').forEach(btn=>btn.addEventListener('click',async()=>{await navigator.clipboard.writeText(btn.dataset.copy);btn.textContent='Copied';setTimeout(()=>btn.textContent='Copy',1400)}));
+  </script>
 </body>
 </html>
