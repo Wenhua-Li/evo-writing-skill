@@ -30,12 +30,18 @@ if (Test-Path (Join-Path $ScriptDir 'SKILL.md')) {
   $Source = $ScriptDir
 } else {
   $Temp = Join-Path ([IO.Path]::GetTempPath()) ("evowrite-" + [guid]::NewGuid().ToString('N'))
-  New-Item -ItemType Directory -Path $Temp | Out-Null
-  $Zip = Join-Path $Temp 'repo.zip'
-  Write-Host "Downloading $Repo@$Ref..."
-  Invoke-WebRequest -Uri "https://github.com/$Repo/archive/$Ref.zip" -OutFile $Zip
-  Expand-Archive -Path $Zip -DestinationPath $Temp
-  $Source = (Get-ChildItem -Path $Temp -Directory | Select-Object -First 1).FullName
+  $Source = Join-Path $Temp 'repo'
+  New-Item -ItemType Directory -Force -Path $Source | Out-Null
+  $BaseUrl = "https://raw.githubusercontent.com/$Repo/$Ref"
+  Write-Host "Downloading EvoWrite file manifest from $BaseUrl..."
+  $Manifest = Invoke-RestMethod -Uri "$BaseUrl/install-manifest.txt"
+  foreach ($Rel in ($Manifest -split "`n")) {
+    $Rel = $Rel.Trim()
+    if (-not $Rel) { continue }
+    $Out = Join-Path $Source $Rel
+    New-Item -ItemType Directory -Force -Path (Split-Path -Parent $Out) | Out-Null
+    Invoke-WebRequest -Uri "$BaseUrl/$Rel" -OutFile $Out
+  }
 }
 
 $SourceSkill = Join-Path $Source 'SKILL.md'

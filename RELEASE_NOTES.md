@@ -1,50 +1,44 @@
-# Release Notes — v0.3.0
+# Release Notes — v0.3.1
 
 ## Summary
 
-`EvoWrite` is the open-source launch release of the Evolutionary Computation writing Skill formerly called `ec-writing`.
+`EvoWrite` is an Agent Skill for natural, evidence-aware Evolutionary Computation paper writing. This patch release improves the public installer so one-command installation works even when GitHub tarball/codeload downloads are blocked.
 
-This release rebrands the project, adds a product-quality README and landing page, provides cross-platform installers, and packages the v0.2 natural-writing redesign for public use.
+## What changed in v0.3.1
 
-## Highlights
+- Added `install-manifest.txt` with the complete public file list.
+- Reworked `install.sh` to download each public file from `raw.githubusercontent.com` when installing from a ref.
+- Reworked `install.ps1` to use the same manifest-based remote installation strategy.
+- Kept local-source installation unchanged.
 
-- New identity: `EvoWrite`, invoked as `evo-write`.
-- Product README in English and Simplified Chinese.
-- Brand banner, logo, and social preview artwork.
-- GitHub Pages landing page under `docs/`.
-- One-command installation via Skills CLI, Bash, or PowerShell.
-- Comparison page explaining when to use EvoWrite instead of a generic humanizer.
-- Behavior evaluation cases for rewriting, drafting, terminology, cost calibration, and audit mode.
-- Citation metadata and community contribution files.
+## Included in the v0.3 series
 
-## Included writing behavior
+- Natural EC prose rewriting with AI-tell removal.
+- Anti-defensive academic writing with positive scope.
+- EC-specific claim calibration for significance, robustness, scalability, efficiency, optimality, convergence, diversity, and cost.
+- Optional author voice matching.
+- English and Simplified Chinese README.
+- GitHub Pages landing page.
+- Behavior evaluation cases.
+- Reproducible aggregate corpus evidence from 1,517 TEVC papers (1997–2023).
 
-- Removes AI tells and template-like EC prose.
-- Removes defensive writing while preserving necessary scientific scope.
-- Preserves claims, citations, numbers, negative results, and theorem conditions.
-- Calibrates EC-specific claims about significance, robustness, scalability, efficiency, optimality, convergence, diversity, and cost.
-- Supports author voice matching.
-- Returns English paper text by default; diagnostics are opt-in.
-
-## Evidence boundary
+## Evidence and safety boundary
 
 - Source TEVC papers are not included.
-- Corpus evidence remains limited to 1997–2023.
 - 2024+ and unassigned early-access material are excluded.
-- Aggregate statistics and original guidance are included; raw corpus text is not.
+- Public data are aggregate statistics and original guidance, not reconstructable raw corpus text.
 - EvoWrite is independent of IEEE and TEVC editorial policy.
+- It does not guarantee publication or AI-detector outcomes.
 
 ## Verification
 
-- Release archive built with private build data excluded.
-- Cross-platform installer scripts included and syntax-checked.
-- Package validated for skill name, entrypoint, archive structure, and private-path markers.
-- Local installation refreshed and checked against repository files.
-- Real CLI calls tested default rewriting and explicit Audit behavior.
+- Public repository created and verified.
+- Release archive checked for skill name, install layout, raw corpus exclusion, private paths, and required files.
+- Public GitHub Pages page verified.
+- Installer fallback changed after detecting codeload/network failure; manifest-based raw download is the intended public installation path.
 
 ## Known limitations
 
-- EvoWrite improves readability and claim calibration; it does not guarantee publication.
-- It does not aim to bypass AI detectors.
 - Naturalness has not yet been evaluated through a multi-rater blind study.
 - Voice matching depends on the supplied sample.
+- PowerShell installation was statically reviewed but not executed in the local validation environment.

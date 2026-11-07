@@ -66,10 +66,16 @@ if [ -n "$SOURCE_DIR" ] && [ -f "$SOURCE_DIR/SKILL.md" ]; then
 else
   TMP="$(mktemp -d)"
   trap 'rm -rf "$TMP"' EXIT
-  echo "Downloading $REPO@$REF..."
-  curl -fsSL "https://github.com/$REPO/archive/$REF.tar.gz" -o "$TMP/repo.tar.gz"
-  tar -xzf "$TMP/repo.tar.gz" -C "$TMP"
-  SRC="$(find "$TMP" -mindepth 1 -maxdepth 1 -type d | head -n 1)"
+  BASE_URL="https://raw.githubusercontent.com/$REPO/$REF"
+  SRC="$TMP/repo"
+  mkdir -p "$SRC"
+  echo "Downloading EvoWrite file manifest from $BASE_URL..."
+  curl -fsSL "$BASE_URL/install-manifest.txt" -o "$TMP/manifest.txt"
+  while IFS= read -r rel; do
+    [ -z "$rel" ] && continue
+    mkdir -p "$SRC/$(dirname "$rel")"
+    curl -fsSL "$BASE_URL/$rel" -o "$SRC/$rel"
+  done < "$TMP/manifest.txt"
 fi
 
 if [ ! -f "$SRC/SKILL.md" ]; then

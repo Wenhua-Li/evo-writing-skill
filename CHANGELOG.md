@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.3.1
+
+### Fixed
+
+- 安装器从 GitHub tarball/codeload 下载改为 `install-manifest.txt` + raw.githubusercontent.com 逐文件下载，提高在受限网络中的一键安装成功率。
+- 新增 `install-manifest.txt`，使远程安装内容可枚举、可校验。
+
 ## v0.3.0
 
 ### Changed

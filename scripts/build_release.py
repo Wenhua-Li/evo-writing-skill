@@ -62,7 +62,7 @@ def validate(root: Path, files: list[Path]) -> dict[str, object]:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
-    parser.add_argument("--version", default="v0.3.0")
+    parser.add_argument("--version", default="v0.3.1")
     args = parser.parse_args(argv)
     root = args.root.resolve()
     files = iter_public_files(root)

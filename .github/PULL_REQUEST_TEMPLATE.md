@@ -5,7 +5,7 @@
 ## Verification
 
 - [ ] `python -m py_compile scripts/*.py`
-- [ ] `python scripts/build_release.py --root . --version v0.3.0`
+- [ ] `python scripts/build_release.py --root . --version v0.3.1`
 - [ ] Added or updated an example/behavior case if behavior changed
 
 ## Notes
