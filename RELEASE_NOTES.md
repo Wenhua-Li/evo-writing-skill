@@ -1,15 +1,14 @@
-# Release Notes — v0.3.2
+# Release Notes — v0.3.3
 
 ## Summary
 
-`EvoWrite` is an Agent Skill for natural, evidence-aware Evolutionary Computation paper writing. This patch makes the public installer resilient in restricted networks.
+`EvoWrite` is an Agent Skill for natural, evidence-aware Evolutionary Computation paper writing. This patch fixes a Bash installer path-handling bug found during live public installation testing.
 
-## What changed in v0.3.2
+## What changed in v0.3.3
 
-- The installer now downloads the Release ZIP by default instead of a Git source archive.
-- If the Release archive is unavailable, it falls back to `install-manifest.txt` and per-file downloads from `raw.githubusercontent.com`.
-- Remote downloads now use retry logic.
-- Local installation from a cloned repository remains unchanged.
+- Download progress and error messages are now written to stderr.
+- The remote source path is the only stdout value returned by the Bash download function.
+- Fixed a failure where the Release ZIP downloaded successfully but the installer could not locate `SKILL.md`.
 
 ## Included in the v0.3 series
 
@@ -34,8 +33,8 @@
 
 - Public repository and GitHub Pages were created and verified.
 - Release archive checked for skill name, install layout, raw corpus exclusion, private paths, and required files.
-- Public installer strategy was changed after live network tests showed source-archive and repeated raw downloads could fail while Release assets remained reachable.
-- The Release ZIP path is the intended default installation source for this version.
+- Public installer strategy was tested against live network conditions and adjusted to use Release assets by default.
+- The Bash path-handling issue found by the live installer test is fixed in this release.
 
 ## Known limitations
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.3.3
+
+### Fixed
+
+- 修复 Bash 安装器在命令替换中混入下载日志的问题；该问题会导致 Release ZIP 已下载成功但安装路径解析失败。
+- 下载进度和错误信息现在输出到 stderr，安装源路径只通过 stdout 返回。
+
 ## v0.3.2
 
 ### Changed

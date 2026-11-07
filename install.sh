@@ -5,7 +5,7 @@ REPO="Wenhua-Li/evo-writing-skill"
 SKILL_NAME="evo-write"
 AGENT="generic"
 DEST=""
-REF="v0.3.2"
+REF="v0.3.3"
 FORCE=0
 DRY_RUN=0
 DOCTOR=0
@@ -69,7 +69,7 @@ download_from_manifest() {
   local base_url="https://raw.githubusercontent.com/$REPO/$REF"
   local src="$tmp/repo"
   mkdir -p "$src"
-  echo "Downloading EvoWrite file manifest from $base_url..."
+  echo "Downloading EvoWrite file manifest from $base_url..." >&2
   download_with_retries -o "$tmp/manifest.txt" "$base_url/install-manifest.txt"
   while IFS= read -r rel; do
     [ -z "$rel" ] && continue
@@ -84,7 +84,7 @@ download_remote_source() {
   if [ "$REF" != "main" ]; then
     local zip_url="https://github.com/$REPO/releases/download/$REF/evo-writing-skill-$REF.zip"
     local archive="$tmp/evo-write.zip"
-    echo "Downloading EvoWrite release archive..."
+    echo "Downloading EvoWrite release archive..." >&2
     if download_with_retries -o "$archive" "$zip_url"; then
       mkdir -p "$tmp/extract"
       if command -v unzip >/dev/null 2>&1; then
