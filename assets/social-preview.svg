@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">EvoWrite social preview</title>
+  <desc id="desc">Social preview card for EvoWrite.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#020617"/><stop offset="1" stop-color="#134e4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <path d="M80 540C170 380 270 275 520 105" fill="none" stroke="#38bdf8" stroke-width="20" stroke-linecap="round"/>
+  <path d="M80 540C185 450 300 360 520 105" fill="none" stroke="#14b8a6" stroke-width="10" stroke-linecap="round"/>
+  <g fill="#e2e8f0"><circle cx="80" cy="540" r="18"/><circle cx="185" cy="450" r="15"/><circle cx="300" cy="360" r="13"/><circle cx="420" cy="205" r="15"/><circle cx="520" cy="105" r="18"/></g>
+  <text x="590" y="205" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="82" font-weight="750">EvoWrite</text>
+  <text x="594" y="276" fill="#bae6fd" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="31">Natural, evidence-aware EC paper writing</text>
+  <text x="594" y="330" fill="#94a3b8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23">Anti-AI tells · Anti-defensive prose · Author voice matching</text>
+  <rect x="590" y="390" width="590" height="150" rx="22" fill="#0f172a" stroke="#1e293b"/>
+  <text x="622" y="445" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="650">From AI-sounding drafts</text>
+  <text x="622" y="492" fill="#5eead4" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25">to careful researcher prose</text>
+</svg>

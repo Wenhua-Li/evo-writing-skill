@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 500" role="img" aria-labelledby="title desc">
+  <title id="title">EvoWrite banner</title>
+  <desc id="desc">EvoWrite brand banner with Pareto front and evolutionary helix.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset=".62" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#134e4a"/>
+    </linearGradient>
+    <linearGradient id="front" x1="0" x2="1">
+      <stop offset="0" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="500" fill="url(#bg)"/>
+  <g opacity=".16" stroke="#94a3b8">
+    <path d="M1150 80c-140 80-140 260 0 340M1450 80c140 80 140 260 0 340"/>
+    <path d="M1200 80c-90 80-90 260 0 340M1400 80c90 80 90 260 0 340"/>
+  </g>
+  <path d="M930 390C1040 270 1150 190 1450 95" fill="none" stroke="url(#front)" stroke-width="18" stroke-linecap="round"/>
+  <g fill="#e2e8f0">
+    <circle cx="930" cy="390" r="17"/><circle cx="1040" cy="270" r="14"/><circle cx="1150" cy="190" r="12"/><circle cx="1300" cy="130" r="14"/><circle cx="1450" cy="95" r="17"/>
+  </g>
+  <text x="110" y="205" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="92" font-weight="750">EvoWrite</text>
+  <text x="114" y="280" fill="#bae6fd" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34">Natural writing for Evolutionary Computation papers</text>
+  <text x="114" y="338" fill="#94a3b8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25">TEVC-informed · Anti-AI tells · Anti-defensive writing · Voice matching</text>
+</svg>

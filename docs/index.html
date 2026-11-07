@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EvoWrite — Natural Evolutionary Computation Paper Writing</title>
+  <meta name="description" content="Agent skill for natural, evidence-aware Evolutionary Computation paper writing.">
+  <style>
+    :root{--bg:#020617;--panel:#0f172a;--text:#e2e8f0;--muted:#94a3b8;--teal:#14b8a6;--blue:#38bdf8;--line:#1e293b}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}
+    .wrap{max-width:1120px;margin:auto;padding:32px 20px}.hero{padding:56px 0 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+    h1{font-size:64px;line-height:1;margin:0 0 18px}h2{margin-top:0}.tag{font-size:24px;color:#bae6fd}.muted{color:var(--muted)}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    pre{background:#020617;border:1px solid var(--line);border-radius:14px;padding:16px;overflow:auto}.btn{display:inline-block;background:linear-gradient(90deg,var(--teal),var(--blue));color:#00111a;text-decoration:none;padding:12px 18px;border-radius:12px;font-weight:700;margin-right:10px}
+    .btn.secondary{background:var(--panel);color:var(--text);border:1px solid var(--line)}img.logo{width:100%;max-width:420px;border-radius:28px;box-shadow:0 20px 60px #0008}
+    @media(max-width:800px){.hero,.grid{grid-template-columns:1fr}h1{font-size:44px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>EvoWrite</h1>
+        <p class="tag">Natural, evidence-aware writing for Evolutionary Computation papers.</p>
+        <p class="muted">Distilled from 1,517 TEVC papers (1997–2023). Removes AI tells and defensive prose while preserving claims, evidence, EC terminology, and your voice.</p>
+        <p><a class="btn" href="https://github.com/Wenhua-Li/evo-writing-skill">GitHub</a><a class="btn secondary" href="quickstart.html">Quick start</a></p>
+      </div>
+      <img class="logo" src="../assets/social-preview.svg" alt="EvoWrite social preview">
+    </section>
+
+    <section class="grid">
+      <div class="card"><h2>Before</h2><p class="muted">With the rapid development of evolutionary computation, large-scale multiobjective optimization has become a hot topic. It is worth noting that our method may potentially significantly outperform state-of-the-art algorithms, although we do not claim universal optimality.</p></div>
+      <div class="card"><h2>After</h2><p>Large-scale multiobjective optimization remains challenging for evolutionary algorithms as the number of decision variables increases. On the tested problems, the proposed algorithm outperforms the state-of-the-art algorithms included in the comparison.</p></div>
+    </section>
+
+    <section class="card" style="margin-top:24px">
+      <h2>Install</h2>
+      <pre><code>npx skills add Wenhua-Li/evo-writing-skill</code></pre>
+      <pre><code>curl -fsSL https://raw.githubusercontent.com/Wenhua-Li/evo-writing-skill/main/install.sh | bash</code></pre>
+    </section>
+
+    <section class="grid" style="margin-top:24px">
+      <div class="card"><h2>Anti-AI tells</h2><p class="muted">Removes grand openings, forced contribution lists, mechanical RQs, empty importance claims, repeated transitions, and template-like results prose.</p></div>
+      <div class="card"><h2>Anti-defensive writing</h2><p class="muted">Replaces repeated disclaimers with positive scope while keeping necessary methodological boundaries once, in the right section.</p></div>
+      <div class="card"><h2>EC evidence calibration</h2><p class="muted">Distinguishes FEs, runtime, model-training cost, convergence, diversity, feasibility, objective value, and fitness.</p></div>
+      <div class="card"><h2>Author voice matching</h2><p class="muted">Matches sentence rhythm, transitions, terminology, punctuation, and directness from your own English sample.</p></div>
+    </section>
+  </main>
+</body>
+</html>

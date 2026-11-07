@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use EvoWrite in your research workflow, please cite it as follows."
+title: "EvoWrite: Natural Evolutionary Computation Paper Writing"
+authors:
+  - family-names: Li
+    given-names: Wenhua
+version: 0.3.0
+date-released: 2026-11-07
+url: "https://github.com/Wenhua-Li/evo-writing-skill"
+repository-code: "https://github.com/Wenhua-Li/evo-writing-skill"
+license: MIT
+keywords:
+  - evolutionary computation
+  - academic writing
+  - agent skills
+  - scientific writing
+  - humanizer

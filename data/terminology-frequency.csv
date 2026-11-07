@@ -1,0 +1,350 @@
+section,term,occurrences,documents,first_year,last_year,present_before_2020
+conclusion,evolutionary algorithm,713,303,1999,2023,1
+conclusion,convergence,556,287,1998,2023,1
+conclusion,benchmark problem,490,272,1999,2023,1
+conclusion,diversity,548,256,2000,2023,1
+conclusion,robustness,365,184,1997,2023,1
+conclusion,genetic algorithm,655,179,1998,2023,1
+conclusion,multiobjective evolutionary algorithm,594,147,2002,2023,1
+conclusion,Pareto front,200,99,1999,2023,1
+conclusion,function evaluations,155,97,1999,2023,1
+conclusion,scalability,145,95,2001,2023,1
+conclusion,genetic programming,398,93,2000,2023,1
+conclusion,particle swarm optimization,346,93,2004,2023,1
+conclusion,differential evolution,223,92,1999,2023,1
+conclusion,evolutionary computation,156,86,1999,2023,1
+conclusion,population size,124,68,1998,2023,1
+conclusion,evolution strategy,255,67,1997,2023,1
+conclusion,time complexity,74,62,1998,2023,1
+conclusion,crossover operator,102,53,2000,2023,1
+conclusion,many-objective optimization,75,53,2007,2023,1
+conclusion,surrogate-assisted,83,47,2006,2023,1
+conclusion,mutation operator,71,44,2001,2023,1
+conclusion,hypervolume,105,42,2007,2023,1
+conclusion,estimation of distribution algorithm,179,36,2003,2023,1
+conclusion,dynamic optimization,63,31,2004,2022,1
+conclusion,statistical test,44,31,2001,2023,1
+conclusion,inverted generational distance,51,29,2013,2023,1
+conclusion,ant colony optimization,107,28,2002,2023,1
+conclusion,large-scale optimization,44,28,2011,2023,1
+conclusion,Pareto optimal set,51,27,2003,2023,1
+conclusion,constraint handling,33,22,2000,2023,1
+conclusion,evolutionary programming,30,16,1999,2019,1
+conclusion,nondominated sorting,29,15,1999,2023,1
+conclusion,multimodal optimization,25,15,2006,2023,1
+conclusion,selection operator,16,12,2001,2023,1
+conclusion,multiobjective optimization,17,10,2004,2020,1
+conclusion,ablation study,6,6,2021,2023,0
+discussion,convergence,237,88,1997,2023,1
+discussion,diversity,220,76,1997,2023,1
+discussion,evolutionary algorithm,223,62,1998,2023,1
+discussion,genetic algorithm,251,60,1997,2023,1
+discussion,benchmark problem,170,60,1998,2023,1
+discussion,robustness,91,54,1997,2022,1
+discussion,population size,69,35,1999,2023,1
+discussion,Pareto front,88,34,2003,2023,1
+discussion,function evaluations,64,34,1998,2023,1
+discussion,multiobjective evolutionary algorithm,192,31,2003,2023,1
+discussion,genetic programming,176,31,1997,2023,1
+discussion,differential evolution,85,28,2002,2021,1
+discussion,scalability,41,24,2002,2023,1
+discussion,statistical test,56,21,1999,2023,1
+discussion,mutation operator,34,21,1997,2022,1
+discussion,evolution strategy,82,20,1997,2023,1
+discussion,particle swarm optimization,54,18,2003,2023,1
+discussion,crossover operator,29,16,1997,2023,1
+discussion,hypervolume,71,15,2006,2023,1
+discussion,inverted generational distance,43,15,2013,2023,1
+discussion,time complexity,25,15,1998,2023,1
+discussion,Pareto optimal set,28,12,1998,2023,1
+discussion,evolutionary computation,17,12,1998,2013,1
+discussion,estimation of distribution algorithm,118,9,2006,2019,1
+discussion,many-objective optimization,15,5,2011,2022,1
+discussion,evolutionary programming,7,5,1997,2023,1
+discussion,nondominated sorting,5,5,2017,2023,1
+discussion,dynamic optimization,4,4,1999,2020,1
+discussion,selection operator,5,3,2003,2023,1
+discussion,surrogate-assisted,17,2,2020,2021,0
+discussion,ant colony optimization,7,2,2009,2013,1
+discussion,constraint handling,3,2,2012,2021,1
+discussion,ablation study,2,2,2023,2023,0
+discussion,large-scale optimization,1,1,2020,2020,0
+experiments,benchmark problem,420,111,1999,2023,1
+experiments,convergence,270,95,1997,2023,1
+experiments,function evaluations,227,81,1997,2023,1
+experiments,population size,154,78,1997,2023,1
+experiments,evolutionary algorithm,225,73,1999,2023,1
+experiments,diversity,217,70,1997,2023,1
+experiments,genetic algorithm,309,61,1997,2023,1
+experiments,statistical test,124,55,2000,2023,1
+experiments,Pareto front,197,42,1999,2023,1
+experiments,multiobjective evolutionary algorithm,226,36,2003,2023,1
+experiments,genetic programming,134,36,2000,2023,1
+experiments,robustness,97,36,1999,2023,1
+experiments,hypervolume,190,32,2006,2023,1
+experiments,differential evolution,180,30,2002,2023,1
+experiments,evolution strategy,133,20,2001,2022,1
+experiments,mutation operator,36,20,2001,2023,1
+experiments,particle swarm optimization,129,19,2004,2023,1
+experiments,crossover operator,63,19,2000,2023,1
+experiments,time complexity,25,16,2000,2023,1
+experiments,inverted generational distance,92,15,2016,2023,1
+experiments,scalability,27,15,2003,2023,1
+experiments,evolutionary computation,21,14,1999,2023,1
+experiments,surrogate-assisted,16,12,2006,2023,1
+experiments,Pareto optimal set,11,9,2002,2023,1
+experiments,nondominated sorting,29,8,2009,2021,1
+experiments,estimation of distribution algorithm,19,7,2009,2023,1
+experiments,multimodal optimization,20,6,2002,2019,1
+experiments,selection operator,10,6,1999,2022,1
+experiments,large-scale optimization,17,5,2017,2020,1
+experiments,multiobjective optimization,6,5,2010,2022,1
+experiments,ablation study,6,5,2021,2023,0
+experiments,ant colony optimization,32,4,2009,2019,1
+experiments,constraint handling,7,4,2002,2021,1
+experiments,many-objective optimization,5,3,2015,2023,1
+experiments,evolutionary programming,4,2,1997,2004,1
+experiments,dynamic optimization,2,2,2002,2019,1
+introduction,evolutionary algorithm,3341,742,1997,2023,1
+introduction,genetic algorithm,2294,514,1997,2023,1
+introduction,convergence,1451,459,1997,2023,1
+introduction,diversity,1567,420,1997,2023,1
+introduction,benchmark problem,731,342,1997,2023,1
+introduction,evolutionary computation,619,268,1997,2023,1
+introduction,differential evolution,907,232,1997,2023,1
+introduction,robustness,645,229,1997,2023,1
+introduction,multiobjective evolutionary algorithm,1895,221,2001,2023,1
+introduction,Pareto front,965,203,1999,2023,1
+introduction,genetic programming,1135,176,1997,2023,1
+introduction,function evaluations,437,170,1997,2023,1
+introduction,particle swarm optimization,1049,168,2003,2023,1
+introduction,evolution strategy,625,159,1997,2023,1
+introduction,population size,216,115,1998,2023,1
+introduction,scalability,192,109,2000,2023,1
+introduction,time complexity,182,103,2000,2023,1
+introduction,mutation operator,160,97,1997,2023,1
+introduction,Pareto optimal set,296,96,2000,2023,1
+introduction,crossover operator,201,89,1997,2023,1
+introduction,many-objective optimization,249,84,2008,2023,1
+introduction,surrogate-assisted,521,82,2004,2023,1
+introduction,nondominated sorting,146,78,2001,2023,1
+introduction,hypervolume,405,76,2006,2023,1
+introduction,ant colony optimization,288,67,2002,2023,1
+introduction,evolutionary programming,186,63,1997,2020,1
+introduction,dynamic optimization,135,61,1997,2023,1
+introduction,estimation of distribution algorithm,505,60,2003,2023,1
+introduction,statistical test,74,51,2001,2023,1
+introduction,selection operator,58,44,1998,2023,1
+introduction,large-scale optimization,146,41,2011,2023,1
+introduction,constraint handling,91,40,1997,2023,1
+introduction,multimodal optimization,96,31,1999,2023,1
+introduction,inverted generational distance,116,26,2013,2023,1
+introduction,multiobjective optimization,93,24,2003,2022,1
+introduction,ablation study,2,2,2022,2023,0
+method,convergence,1310,369,1997,2023,1
+method,diversity,1177,344,1997,2023,1
+method,population size,694,329,1997,2023,1
+method,evolutionary algorithm,1007,316,1997,2023,1
+method,genetic algorithm,1502,296,1997,2023,1
+method,function evaluations,664,217,1997,2023,1
+method,benchmark problem,682,194,1997,2023,1
+method,Pareto front,668,169,1999,2023,1
+method,multiobjective evolutionary algorithm,1091,157,2001,2023,1
+method,mutation operator,358,155,1997,2023,1
+method,differential evolution,738,141,1999,2023,1
+method,crossover operator,285,128,1997,2023,1
+method,robustness,287,117,1997,2023,1
+method,time complexity,204,101,1998,2023,1
+method,particle swarm optimization,590,96,2004,2023,1
+method,genetic programming,614,91,1997,2023,1
+method,statistical test,165,83,1997,2023,1
+method,evolution strategy,388,82,1997,2023,1
+method,Pareto optimal set,254,70,1998,2023,1
+method,nondominated sorting,172,68,2002,2023,1
+method,evolutionary computation,138,66,1997,2023,1
+method,surrogate-assisted,329,59,2006,2023,1
+method,scalability,95,52,2002,2023,1
+method,hypervolume,281,51,2006,2023,1
+method,selection operator,147,50,1999,2023,1
+method,estimation of distribution algorithm,303,44,2002,2022,1
+method,inverted generational distance,180,33,2010,2023,1
+method,constraint handling,56,31,2000,2023,1
+method,many-objective optimization,63,29,2007,2023,1
+method,evolutionary programming,124,27,1997,2023,1
+method,ant colony optimization,133,23,2002,2023,1
+method,dynamic optimization,49,19,2000,2023,1
+method,multimodal optimization,22,16,2002,2023,1
+method,large-scale optimization,36,15,2014,2023,1
+method,multiobjective optimization,40,14,2004,2022,1
+method,ablation study,6,4,2021,2023,0
+other,convergence,7253,937,1997,2023,1
+other,evolutionary algorithm,6165,798,1997,2023,1
+other,population size,3047,795,1997,2023,1
+other,diversity,6032,778,1997,2023,1
+other,genetic algorithm,7379,715,1997,2023,1
+other,benchmark problem,5534,656,1997,2023,1
+other,function evaluations,3052,595,1997,2023,1
+other,statistical test,1938,480,1997,2023,1
+other,robustness,1932,466,1997,2023,1
+other,mutation operator,1255,413,1997,2023,1
+other,Pareto front,4806,393,1999,2023,1
+other,differential evolution,4333,378,1997,2023,1
+other,crossover operator,1049,347,1997,2023,1
+other,time complexity,1051,326,1997,2023,1
+other,multiobjective evolutionary algorithm,6681,309,2001,2023,1
+other,evolutionary computation,1096,288,1997,2023,1
+other,evolution strategy,2623,269,1997,2023,1
+other,particle swarm optimization,4213,255,2001,2023,1
+other,scalability,738,247,1997,2023,1
+other,genetic programming,4762,242,1997,2023,1
+other,hypervolume,2884,236,1999,2023,1
+other,Pareto optimal set,1240,212,1997,2023,1
+other,inverted generational distance,2118,175,2008,2023,1
+other,nondominated sorting,405,161,1997,2023,1
+other,selection operator,293,136,1997,2023,1
+other,evolutionary programming,580,111,1997,2023,1
+other,surrogate-assisted,840,108,2006,2023,1
+other,estimation of distribution algorithm,1202,103,2003,2023,1
+other,many-objective optimization,322,102,2007,2023,1
+other,constraint handling,256,94,1997,2023,1
+other,dynamic optimization,345,88,1997,2023,1
+other,ant colony optimization,976,72,2002,2023,1
+other,large-scale optimization,338,57,2001,2023,1
+other,multimodal optimization,158,47,1997,2023,1
+other,multiobjective optimization,210,44,1997,2023,1
+other,ablation study,45,28,2005,2023,1
+preliminaries,evolutionary algorithm,142,64,1997,2023,1
+preliminaries,convergence,159,57,1997,2023,1
+preliminaries,diversity,145,47,2005,2023,1
+preliminaries,Pareto front,187,40,2003,2023,1
+preliminaries,multiobjective evolutionary algorithm,128,35,2003,2023,1
+preliminaries,genetic algorithm,172,34,1997,2023,1
+preliminaries,genetic programming,110,26,1999,2022,1
+preliminaries,robustness,68,24,1997,2023,1
+preliminaries,benchmark problem,49,24,1997,2023,1
+preliminaries,function evaluations,46,23,2004,2023,1
+preliminaries,evolutionary computation,41,23,2000,2023,1
+preliminaries,particle swarm optimization,66,21,2006,2023,1
+preliminaries,Pareto optimal set,54,21,2003,2023,1
+preliminaries,population size,31,16,2004,2022,1
+preliminaries,scalability,20,15,2008,2023,1
+preliminaries,differential evolution,31,14,1997,2023,1
+preliminaries,hypervolume,50,10,2011,2023,1
+preliminaries,many-objective optimization,18,10,2013,2023,1
+preliminaries,time complexity,12,9,1997,2023,1
+preliminaries,surrogate-assisted,26,8,2018,2023,1
+preliminaries,evolution strategy,19,7,1998,2023,1
+preliminaries,crossover operator,11,7,2009,2023,1
+preliminaries,mutation operator,7,7,2004,2023,1
+preliminaries,ant colony optimization,12,6,2002,2023,1
+preliminaries,evolutionary programming,7,6,1997,2009,1
+preliminaries,multimodal optimization,9,5,2010,2023,1
+preliminaries,inverted generational distance,14,4,2019,2023,1
+preliminaries,statistical test,5,4,2009,2023,1
+preliminaries,nondominated sorting,5,4,2015,2021,1
+preliminaries,multiobjective optimization,4,4,1997,2016,1
+preliminaries,constraint handling,3,2,2006,2020,1
+preliminaries,selection operator,3,2,2022,2023,0
+preliminaries,dynamic optimization,2,2,2001,2023,1
+preliminaries,estimation of distribution algorithm,2,2,2008,2022,1
+preliminaries,large-scale optimization,2,2,2019,2021,1
+related_work,evolutionary algorithm,293,103,1999,2023,1
+related_work,genetic algorithm,385,95,1997,2023,1
+related_work,diversity,225,76,1997,2023,1
+related_work,convergence,172,73,1999,2023,1
+related_work,genetic programming,306,46,1997,2023,1
+related_work,differential evolution,203,40,1997,2023,1
+related_work,particle swarm optimization,148,32,2004,2023,1
+related_work,multiobjective evolutionary algorithm,119,32,2006,2023,1
+related_work,evolutionary computation,61,30,1997,2023,1
+related_work,benchmark problem,54,30,2001,2022,1
+related_work,function evaluations,58,29,2001,2023,1
+related_work,robustness,54,29,1999,2023,1
+related_work,Pareto front,84,27,2004,2023,1
+related_work,crossover operator,36,25,1999,2023,1
+related_work,mutation operator,44,24,2001,2023,1
+related_work,surrogate-assisted,56,19,2004,2023,1
+related_work,population size,35,18,1999,2021,1
+related_work,evolution strategy,57,17,1997,2023,1
+related_work,time complexity,22,16,1999,2023,1
+related_work,estimation of distribution algorithm,80,14,2004,2022,1
+related_work,constraint handling,20,14,2005,2023,1
+related_work,scalability,24,13,2006,2023,1
+related_work,ant colony optimization,24,12,2009,2023,1
+related_work,nondominated sorting,17,11,2008,2023,1
+related_work,statistical test,16,9,2004,2023,1
+related_work,Pareto optimal set,16,9,2008,2023,1
+related_work,dynamic optimization,15,9,2006,2023,1
+related_work,evolutionary programming,12,8,1997,2023,1
+related_work,multimodal optimization,11,7,2006,2017,1
+related_work,hypervolume,50,5,2014,2021,1
+related_work,large-scale optimization,13,4,2017,2022,1
+related_work,many-objective optimization,6,3,2013,2023,1
+related_work,selection operator,3,3,2006,2023,1
+related_work,inverted generational distance,29,2,2014,2021,1
+related_work,multiobjective optimization,1,1,2010,2010,1
+related_work,ablation study,1,1,2022,2022,0
+results,convergence,850,237,1997,2023,1
+results,benchmark problem,946,200,1997,2023,1
+results,statistical test,436,143,1998,2023,1
+results,population size,305,139,1997,2023,1
+results,diversity,462,128,1997,2023,1
+results,genetic algorithm,747,127,1997,2023,1
+results,function evaluations,347,114,1997,2023,1
+results,evolutionary algorithm,389,99,1998,2023,1
+results,multiobjective evolutionary algorithm,1174,88,2001,2023,1
+results,Pareto front,466,87,2001,2023,1
+results,robustness,231,81,1998,2023,1
+results,inverted generational distance,372,64,2010,2023,1
+results,hypervolume,324,64,2003,2023,1
+results,differential evolution,415,60,1997,2023,1
+results,evolution strategy,459,51,1997,2023,1
+results,genetic programming,411,50,1997,2023,1
+results,particle swarm optimization,377,40,2004,2023,1
+results,scalability,47,34,2003,2023,1
+results,Pareto optimal set,134,29,1998,2023,1
+results,mutation operator,50,29,1997,2023,1
+results,crossover operator,43,25,2000,2023,1
+results,time complexity,28,19,1997,2023,1
+results,estimation of distribution algorithm,165,13,2003,2017,1
+results,evolutionary programming,118,13,1997,2017,1
+results,surrogate-assisted,31,12,2013,2023,1
+results,evolutionary computation,18,11,1999,2023,1
+results,dynamic optimization,13,11,2006,2023,1
+results,nondominated sorting,14,10,2008,2023,1
+results,ant colony optimization,30,9,2005,2022,1
+results,constraint handling,23,9,2000,2023,1
+results,large-scale optimization,21,8,2012,2023,1
+results,many-objective optimization,17,8,2016,2023,1
+results,selection operator,12,7,2005,2021,1
+results,multiobjective optimization,8,5,2004,2023,1
+results,ablation study,4,4,2021,2023,0
+results,multimodal optimization,4,3,2006,2021,1
+theory,convergence,161,24,1998,2022,1
+theory,evolutionary algorithm,73,12,2000,2022,1
+theory,population size,20,7,2002,2022,1
+theory,Pareto front,40,6,2003,2021,1
+theory,hypervolume,30,5,2009,2023,1
+theory,genetic algorithm,22,5,2000,2020,1
+theory,benchmark problem,5,5,2010,2022,1
+theory,time complexity,6,4,2002,2020,1
+theory,ant colony optimization,21,3,2002,2018,1
+theory,evolution strategy,19,3,2000,2020,1
+theory,multiobjective evolutionary algorithm,15,3,2014,2021,1
+theory,diversity,8,3,2006,2021,1
+theory,evolutionary computation,6,3,2001,2021,1
+theory,multiobjective optimization,5,3,2010,2020,1
+theory,robustness,4,3,2005,2014,1
+theory,function evaluations,5,2,2002,2019,1
+theory,inverted generational distance,4,2,2014,2019,1
+theory,estimation of distribution algorithm,3,2,2006,2014,1
+theory,differential evolution,3,2,2014,2022,1
+theory,particle swarm optimization,3,1,2022,2022,0
+theory,constraint handling,2,1,2021,2021,0
+theory,selection operator,2,1,2021,2021,0
+theory,many-objective optimization,1,1,2014,2014,1
+theory,crossover operator,1,1,2020,2020,0
+theory,mutation operator,1,1,2020,2020,0
+theory,Pareto optimal set,1,1,2020,2020,0
+theory,surrogate-assisted,1,1,2022,2022,0
+theory,scalability,1,1,2022,2022,0

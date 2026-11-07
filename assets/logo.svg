@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">EvoWrite logo</title>
+  <desc id="desc">A Pareto front curve crossing an evolutionary helix.</desc>
+  <rect width="512" height="512" rx="112" fill="#0f172a"/>
+  <path d="M126 382C168 288 213 218 386 126" fill="none" stroke="#38bdf8" stroke-width="22" stroke-linecap="round"/>
+  <path d="M126 382C188 344 240 312 386 126" fill="none" stroke="#14b8a6" stroke-width="12" stroke-linecap="round" opacity=".95"/>
+  <g fill="#e2e8f0">
+    <circle cx="126" cy="382" r="18"/>
+    <circle cx="188" cy="322" r="16"/>
+    <circle cx="248" cy="270" r="14"/>
+    <circle cx="316" cy="196" r="14"/>
+    <circle cx="386" cy="126" r="18"/>
+  </g>
+  <path d="M102 130c64 36 64 216 0 252M410 130c-64 36-64 216 0 252" fill="none" stroke="#64748b" stroke-width="12" stroke-linecap="round" opacity=".75"/>
+  <path d="M150 382c-28-34-28-218 0-252M362 130c28 34 28 218 0 252" fill="none" stroke="#64748b" stroke-width="6" stroke-linecap="round" opacity=".45"/>
+</svg>
