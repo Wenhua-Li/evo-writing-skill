@@ -5,16 +5,17 @@
     "input": "With the rapid development of evolutionary computation, large-scale multiobjective optimization has become a hot topic. It is worth noting that our method may potentially significantly outperform state-of-the-art algorithms, although we do not claim universal optimality.",
     "must": [
       "Return revised English only when asked for text",
-      "Remove grand-opening and metadiscourse",
-      "Remove stacked hedging and defensive disclaimer",
-      "Use positive scope instead of a universal claim"
+      "Remove grand-opening, all active-research-area framing, and metadiscourse",
+      "Remove may significantly, defensive do-not-claim wording, and without-assuming universal disclaimers",
+      "Do not preserve the unsupported performance claim as an aim to outperform",
+      "State only the technical problem and research action supported by the input"
     ],
     "must_not": [
       "Add baselines, numbers, citations, or results",
       "Keep statistically significant without a test",
       "Return a long diagnostic report by default"
     ],
-    "notes": "Checks the default prose-first behavior."
+    "notes": "Checks the default prose-first behavior and iterations 1-2 regressions."
   },
   {
     "id": "draft-missing-evidence",
@@ -22,15 +23,18 @@
     "input": "Draft an introduction for an expensive multiobjective optimization paper using Gaussian-process-assisted differential evolution to reduce exact function evaluations. No baselines, numbers, or results are provided.",
     "must": [
       "Write only what the supplied material supports",
-      "Avoid invented citations, baselines, values, or outcomes",
-      "List at most three missing details after the draft"
+      "Use sparse-draft mode with at most 80 words of paper text",
+      "Do not infer candidate screening, training-set construction, model updates, archive rules, or budget allocation from the method name",
+      "Avoid invented citations, baselines, values, time costs, evaluation counts, outcomes, or a planned experimental study",
+      "List at most three missing details after the draft, prioritizing mechanism details needed for the method section"
     ],
     "must_not": [
       "Use MISSING placeholders throughout the paper text",
+      "Generate a full multi-paragraph introduction from sparse notes",
       "Claim performance improvements",
-      "Fabricate a benchmark or statistical result"
+      "Fabricate a benchmark, statistical result, indicator plan, fixed budget, or paper-specific surrogate-management procedure"
     ],
-    "notes": "Checks the v0.2+ missing-information behavior."
+    "notes": "Checks sparse drafting and the iteration-2 invention regression."
   },
   {
     "id": "audit-overclaim",
@@ -39,14 +43,17 @@
     "must": [
       "Identify proves/optimal as a theory-level overclaim",
       "Identify all as an unsupported universal comparison",
-      "Require a statistical protocol for significantly",
-      "Require perturbation and dimension evidence for robust/scalable"
+      "Require a defined statistical test for significantly",
+      "Require perturbation and dimension evidence for robust/scalable",
+      "Keep Revised text free of tested-problem, compared-baseline, and performance claims when no evidence is supplied",
+      "Keep verification commands, exit codes, and self-check notes out of Revised text",
+      "Limit the evidence-free fallback to the design target; do not add small budgets, Pareto-front approximation, or other goals"
     ],
     "must_not": [
       "Return only a rewritten sentence without the requested audit",
       "Treat robust or scalable as self-explanatory"
     ],
-    "notes": "Checks explicit Audit mode."
+    "notes": "Checks explicit Audit mode and evidence-safe revision."
   },
   {
     "id": "cost-calibration",
@@ -54,14 +61,15 @@
     "input": "The surrogate-assisted algorithm is highly efficient because it converges in only 20 generations.",
     "must": [
       "Avoid equating generations with expensive-evaluation efficiency",
-      "Ask for or mark the need for exact FEs and model overhead when reporting",
-      "Use bounded wording if no cost data are provided"
+      "If efficiency is discussed, ask for or mark the need for exact FEs and model overhead; if efficiency is removed, no extra note is needed",
+      "Use neutral bounded wording if no cost data are provided",
+      "Preserve the exact count as exactly 20 generations or 20 generations; remove promotional only and do not change it to within 20 generations"
     ],
     "must_not": [
       "Claim reduced expensive evaluations without evidence",
       "Confuse runtime, generations, and FEs"
     ],
-    "notes": "Checks EC-specific cost calibration."
+    "notes": "Checks EC-specific cost calibration and exact quantity qualifiers."
   },
   {
     "id": "multiobjective-terminology",

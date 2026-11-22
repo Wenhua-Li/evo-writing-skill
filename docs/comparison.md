@@ -67,12 +67,12 @@ EvoWrite uses the same broad principle but applies it to EC-specific claims:
 - robustness requires a perturbation model;
 - scalability requires a dimension and budget;
 - efficiency requires a cost measure;
-- significance requires a statistical protocol;
+- significance requires a defined statistical test;
 - Pareto claims require the correct space and reference setting.
 
 ## Compared with domain writing packs
 
-Domain writing packs such as economics or Nature-style workflows often cover a whole publication pipeline. EvoWrite is deliberately narrower:
+Domain writing packs such as economics or Nature-style workflows often cover the entire publication process. EvoWrite is deliberately narrower:
 
 - one installable skill;
 - focused on natural EC prose;

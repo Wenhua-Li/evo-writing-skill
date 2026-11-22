@@ -33,7 +33,7 @@ Check that exact evaluations, surrogate training cost, runtime, and model-manage
 
 ```text
 Use evo-write. Rewrite this introduction for a large-scale multiobjective DE paper.
-Focus on variable interaction, evaluation budget, and grouping cost rather than generic dimensionality claims.
+Focus on variable interaction, evaluation budget, and grouping cost; omit generic dimensionality claims.
 ```
 
 ## Voice matching

@@ -2,16 +2,11 @@
 
 实验章节的目标不是展示大量表格，而是让读者判断：结论在哪些条件下由哪些证据支持。
 
-## 1. 先写研究问题
+## 1. 先明确实验要回答的问题
 
-推荐在实验设计前列出 RQ：
+实验通常需要覆盖公平预算下的总体比较、组件作用、不同问题条件下的表现和额外计算成本。可以用小节标题和实验顺序直接体现这些问题，也可以在问题确实复杂且需要显式追踪时使用 RQ。
 
-- RQ1: Does the proposed method improve overall performance under a fair budget?
-- RQ2: Which component is responsible for the observed improvement?
-- RQ3: How does performance scale with dimensionality, objectives, constraints, noise, or dynamics?
-- RQ4: What additional computational overhead is introduced?
-
-RQ 应与 Introduction 中的缺口一一对应。
+不要为了形式统一硬凑 RQ1–RQ4，也不要让每篇论文都套用同一组问题。实验内容应与 Introduction 中提出的研究缺口对应。
 
 ## 2. 实验设置
 
@@ -19,7 +14,7 @@ RQ 应与 Introduction 中的缺口一一对应。
 
 - benchmark/dataset/instance 及选择理由；
 - 对比算法及版本来源；
-- 参数设置与调参协议；
+- 参数设置与调参过程；
 - population size、终止条件、评价预算；
 - 独立运行次数、随机种子或复现实验材料；
 - 指标方向、归一化、参考点/参考集；
@@ -50,13 +45,7 @@ RQ 应与 Introduction 中的缺口一一对应。
 
 ### 4.3 结果段落
 
-推荐顺序：
-
-```text
-As shown in [TABLE/FIGURE], [OBSERVATION].
-The difference is concentrated on [SUBSET/CONDITION], suggesting that [MECHANISM/EXPLANATION].
-However, [EXCEPTION/LIMITATION] indicates that [BOUNDARY].
-```
+先报告图表中可直接观察的结果，再根据证据解释可能原因，最后说明例外或边界。不要为了套顺序而给每个结果都增加原因推测；只有观察而没有机制证据时，直接报告观察即可。例外与限制应在相关位置出现，不要求每段都以 `However` 收尾。
 
 ## 5. 统计语言
 

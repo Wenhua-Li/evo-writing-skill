@@ -1,0 +1,116 @@
+{
+  "clean": [
+    {
+      "id": "plain-results",
+      "text": "We compare the algorithm with NSGA-II on 30 test problems. Each algorithm has the same evaluation budget. Table II reports the mean IGD values obtained from 20 independent runs."
+    },
+    {
+      "id": "technical-exceptions",
+      "text": "The trial vector is updated by DE. The robot trajectory is tracked. Synthetic data are used. The coordinate axes are labeled. Extreme solutions are retained."
+    },
+    {
+      "id": "protected-text",
+      "text": "The equation $x = y$ remains unchanged. The code uses `rather than` as an input string. The direct quotation \"rather than\" is retained for analysis."
+    },
+    {
+      "id": "plain-method",
+      "text": "At each generation, the algorithm estimates variable interactions from the current population. Variables with strong estimated interactions are assigned to the same group. Each group is updated while the remaining variables keep their current values."
+    },
+    {
+      "id": "qualified-robustness",
+      "text": "The algorithm is robust to the evaluated noise levels, as shown by the results in Table III."
+    }
+  ],
+  "blocked": [
+    {
+      "id": "user-reported-terms",
+      "text": "Axes Synthetic Provenance Admission Extreme Declared Protocol Tie Saturated Trajectories Certified Menus Audit Inferred trial rival Refinement.",
+      "rules": ["axes", "synthetic", "provenance", "admission", "extreme", "declared", "protocol", "tie", "saturated", "trajectory", "certified", "menu", "audit", "inferred", "trial", "rival", "refinement"]
+    },
+    {
+      "id": "rather-than",
+      "text": "The method uses grouping rather than full-dimensional updates.",
+      "rules": ["rather-than"]
+    },
+    {
+      "id": "contrast-template",
+      "text": "The goal is not faster convergence but wider coverage.",
+      "rules": ["not-x-but-y"]
+    },
+    {
+      "id": "misused-technical-terms",
+      "text": "The trial was repeated. Search trajectories are compared. Synthetic benchmarks are used. The method is extremely complex.",
+      "rules": ["trial", "trajectory", "synthetic", "extreme"]
+    },
+    {
+      "id": "repeated-transition",
+      "text": "Moreover, the first test uses ten runs. Moreover, the second test uses twenty runs.",
+      "rules": ["repeated-transition"]
+    },
+    {
+      "id": "repeated-opening",
+      "text": "The algorithm updates the group. The algorithm evaluates the result. The algorithm selects the survivor.",
+      "rules": ["repeated-sentence-opening"]
+    },
+    {
+      "id": "repeated-ngram",
+      "text": "This vague opening phrase repeats here. This vague opening phrase repeats here.",
+      "rules": ["repeated-ngram"]
+    },
+    {
+      "id": "engineering-metaphors",
+      "text": "The optimization engine orchestrates a menu of operators and leverages inferred provenance to facilitate archive admission.",
+      "rules": ["optimization-engine", "orchestrate", "menu", "leverage", "inferred", "provenance", "facilitate", "admission"]
+    },
+    {
+      "id": "iteration-one-ai-frames",
+      "text": "Large-scale multiobjective optimization is now one of the most active research areas in evolutionary computation. Our method may significantly outperform state-of-the-art algorithms, although we do not claim that it is the best choice for every problem.",
+      "rules": ["research-interest", "hedged-significance", "do-not-claim"]
+    },
+    {
+      "id": "stock-contrast-fallback",
+      "text": "Instead of changing every decision variable in each update, the method changes one group at a time.",
+      "rules": ["instead-of"]
+    },
+    {
+      "id": "unsupported-scalability-paraphrase",
+      "text": "Its search relies on a set of improvement operators instead of the conventional mutation operator, which keeps the performance robust and stable as the problem size grows.",
+      "rules": ["instead-of", "unqualified-robust", "stock-scalability-paraphrase"]
+    },
+    {
+      "id": "colloquial-universal",
+      "text": "The results do not show that the algorithm wins everywhere.",
+      "rules": ["colloquial-win"]
+    },
+    {
+      "id": "iteration-two-abstract-frames",
+      "text": "Large-scale multiobjective optimization is now an active research area. The aim of this work is to develop an algorithm that can outperform state-of-the-art methods, without assuming that a single method is best in all settings.",
+      "rules": ["research-interest", "unsupported-performance-aim", "defensive-universality"]
+    },
+    {
+      "id": "statistical-test-dilution",
+      "text": "Table II does not establish universal superiority. The algorithm uses 38% fewer evaluations, with p = 0.03 under the stated experimental setup.",
+      "rules": ["defensive-universality", "statistical-test-dilution"]
+    },
+    {
+      "id": "process-note-in-revised-text",
+      "text": "The proposed algorithm is designed for expensive optimization. (Verified with `python check_prose.py -`, exit code 0.)",
+      "rules": ["process-report-in-paper"]
+    },
+    {
+      "id": "generation-efficiency",
+      "text": "The surrogate-assisted algorithm is efficient: it converges in only 20 generations.",
+      "rules": ["generation-efficiency", "promotional-only-generations"]
+    },
+    {
+      "id": "extended-scalability-paraphrase",
+      "text": "It applies several update operators with the design goal of maintaining consistent performance as the number of decision variables grows.",
+      "rules": ["stock-scalability-paraphrase"]
+    },
+    {
+      "id": "empty-procedure-contrast",
+      "text": "The algorithm does not rely on a stated procedure. Environmental selection works without requiring a separately stated selection rule. The method specifies no fixed procedure.",
+      "rules": ["empty-procedure-contrast"]
+    }
+  ]
+}

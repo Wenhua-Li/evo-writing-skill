@@ -32,6 +32,7 @@ skill/data/collocations.csv
 skill/data/corpus-overview.csv
 skill/data/domain-summary.csv
 skill/data/introduction-paragraph-moves.csv
+skill/data/prose-gate.json
 skill/data/README.md
 skill/data/rhetorical-phrases.csv
 skill/data/sample-summary.csv
@@ -47,6 +48,7 @@ skill/examples/before-after-conclusion.md
 skill/examples/before-after-experiments.md
 skill/examples/before-after-introduction.md
 skill/examples/before-after-method.md
+skill/examples/before-after-plain-ec.md
 skill/references/article-types/algorithm.md
 skill/references/article-types/application.md
 skill/references/article-types/survey.md
@@ -74,6 +76,8 @@ skill/references/style/ec-ai-tells.md
 skill/references/style/high-frequency-language.md
 skill/references/style/human-scholarly-voice.md
 skill/references/style/language-style.md
+skill/references/style/plain-ec-english.md
+skill/references/style/revision-gate.md
 skill/references/style/terminology.md
 skill/references/workflow.md
 skill/templates/claim-evidence-matrix.md
@@ -86,11 +90,15 @@ skill/voice/survey.md
 skill/voice/theory.md
 SKILL.md
 tools/evals/behavior-cases.json
+tools/evals/language-rewrite-cases.json
+tools/evals/prose-gate-fixtures.json
 tools/evals/README.md
+tools/evals/test_prose_gate.py
 tools/scripts/analyze_lexicon.py
 tools/scripts/analyze_rhetoric.py
 tools/scripts/analyze_structure.py
 tools/scripts/build_corpus.py
 tools/scripts/build_release.py
+tools/scripts/check_prose.py
 tools/scripts/classify_domains.py
 tools/scripts/sample_corpus.py

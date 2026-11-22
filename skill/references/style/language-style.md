@@ -1,11 +1,10 @@
-# Language Style（已合并）
+# Language Style
 
-本文件已由 `human-scholarly-voice.md` 取代。
+本文件已由以下强制规范取代：
 
-v0.2.0 的语言目标是自然、具体、节奏真实的 EC 学术英文，而不是把“准确、紧凑”写成统一的模板声。
+- `skill/references/style/plain-ec-english.md`：普通、具体、传统的 EC 学术英文；
+- `skill/references/style/revision-gate.md`：命中即返工的输出门禁；
+- `skill/data/prose-gate.json`：词汇、词形和句式的统一匹配数据；
+- `skill/references/style/terminology.md`：EC 术语、空间和符号准确性。
 
-请使用：
-
-- `skill/references/style/human-scholarly-voice.md`：自然学术人声；
-- `skill/references/style/ec-ai-tells.md`：结构性 AI 痕迹；
-- `skill/references/style/terminology.md`：EC 术语和符号。
+高频语料只能帮助确认表达是否常见，不能作为使用工程隐喻、AI 套话或违禁词的依据。

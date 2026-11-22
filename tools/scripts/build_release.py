@@ -11,6 +11,11 @@ import sys
 import zipfile
 from pathlib import Path
 
+try:
+    from .check_prose import check_text
+except ImportError:
+    from check_prose import check_text
+
 ROOT = Path(__file__).resolve().parents[2]
 EXCLUDED_DIRS = {".git", "build", "dist", "__pycache__", ".pytest_cache"}
 EXCLUDED_FILES = {".DS_Store", "Thumbs.db"}
@@ -18,19 +23,86 @@ SECRET_NAMES = {".env", ".env.local", "id_rsa", "id_ed25519"}
 
 
 def iter_public_files(root: Path) -> list[Path]:
-    files: list[Path] = []
-    for path in sorted(root.rglob("*")):
-        rel = path.relative_to(root)
-        if path.is_dir():
+    manifest_path = root / "install-manifest.txt"
+    if not manifest_path.is_file():
+        raise SystemExit("install-manifest.txt is missing.")
+    files = []
+    seen = set()
+    for raw_line in manifest_path.read_text(encoding="utf-8").splitlines():
+        entry = raw_line.strip()
+        if not entry:
             continue
+        rel = Path(entry)
+        if rel.is_absolute() or ".." in rel.parts:
+            raise SystemExit(f"Manifest paths must stay inside the release root: {entry}")
+        if entry in seen:
+            raise SystemExit(f"Duplicate manifest entry: {entry}")
+        seen.add(entry)
+        path = root / rel
         if any(part in EXCLUDED_DIRS for part in rel.parts):
-            continue
+            raise SystemExit(f"Excluded directory listed in manifest: {entry}")
         if path.name in EXCLUDED_FILES or path.suffix == ".pyc":
-            continue
+            raise SystemExit(f"Excluded file listed in manifest: {entry}")
         if path.name in SECRET_NAMES:
-            raise SystemExit(f"Refusing to package possible secret file: {rel}")
+            raise SystemExit(f"Refusing to package possible secret file: {entry}")
+        if not path.is_file():
+            raise SystemExit(f"Manifest file is missing: {entry}")
         files.append(path)
     return files
+
+
+def after_example_blocks(root: Path) -> list[tuple[Path, str]]:
+    blocks = []
+    for path in sorted((root / "skill" / "examples").glob("*.md")):
+        collecting = False
+        current = []
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip() in {"## After", "### After"}:
+                if current:
+                    blocks.append((path, " ".join(current)))
+                current = []
+                collecting = True
+            elif line.startswith("#"):
+                if current:
+                    blocks.append((path, " ".join(current)))
+                current = []
+                collecting = False
+            elif collecting and line.startswith("> "):
+                current.append(line[2:])
+        if current:
+            blocks.append((path, " ".join(current)))
+    return blocks
+
+
+def validate_prose_gate(root: Path) -> dict[str, int]:
+    lexicon_path = root / "skill" / "data" / "prose-gate.json"
+    fixtures_path = root / "tools" / "evals" / "prose-gate-fixtures.json"
+    try:
+        rules = json.loads(lexicon_path.read_text(encoding="utf-8"))
+        fixtures = json.loads(fixtures_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise SystemExit(f"Cannot load prose-gate validation data: {error}") from error
+    for fixture in fixtures["clean"]:
+        findings = check_text(fixture["text"], rules)
+        if findings:
+            raise SystemExit(f"Clean prose-gate fixture {fixture['id']} failed: {findings[:2]}")
+    for fixture in fixtures["blocked"]:
+        actual = {item["rule"] for item in check_text(fixture["text"], rules)}
+        missing = set(fixture["rules"]) - actual
+        if missing:
+            raise SystemExit(f"Blocked prose-gate fixture {fixture['id']} missed rules: {sorted(missing)}")
+    examples = after_example_blocks(root)
+    if not examples:
+        raise SystemExit("No After examples found for prose-gate validation.")
+    for path, text in examples:
+        findings = check_text(text, rules)
+        if findings:
+            raise SystemExit(f"Recommended After example in {path.name} failed: {findings[:2]}")
+    return {
+        "clean_fixtures": len(fixtures["clean"]),
+        "blocked_fixtures": len(fixtures["blocked"]),
+        "after_examples": len(examples),
+    }
 
 
 def validate(root: Path, files: list[Path]) -> dict[str, object]:
@@ -42,7 +114,16 @@ def validate(root: Path, files: list[Path]) -> dict[str, object]:
         raise SystemExit("SKILL.md must declare name: evo-write.")
     if "description:" not in text.split("---", 2)[1]:
         raise SystemExit("SKILL.md frontmatter must contain a description.")
-    required = [root / "README.md", root / "LICENSE", root / "LICENSE-CC-BY-4.0"]
+    required = [
+        root / "README.md",
+        root / "LICENSE",
+        root / "LICENSE-CC-BY-4.0",
+        root / "skill" / "data" / "prose-gate.json",
+        root / "skill" / "references" / "style" / "plain-ec-english.md",
+        root / "skill" / "references" / "style" / "revision-gate.md",
+        root / "tools" / "scripts" / "check_prose.py",
+        root / "tools" / "evals" / "prose-gate-fixtures.json",
+    ]
     missing = [str(p.relative_to(root)) for p in required if not p.is_file()]
     if missing:
         raise SystemExit(f"Missing release files: {', '.join(missing)}")
@@ -56,13 +137,14 @@ def validate(root: Path, files: list[Path]) -> dict[str, object]:
         "files": len(files),
         "bytes": sum(p.stat().st_size for p in files),
         "largest_files": sorted(((str(p.relative_to(root)), p.stat().st_size) for p in files), key=lambda x: x[1], reverse=True)[:10],
+        "prose_gate": validate_prose_gate(root),
     }
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
-    parser.add_argument("--version", default="v0.4.0")
+    parser.add_argument("--version", default="v0.5.0")
     args = parser.parse_args(argv)
     root = args.root.resolve()
     files = iter_public_files(root)

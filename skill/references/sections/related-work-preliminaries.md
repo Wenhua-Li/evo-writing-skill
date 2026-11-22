@@ -40,7 +40,7 @@ They are effective when [CONDITION], but their reliance on [ASSUMPTION] makes th
 
 ```text
 The proposed method differs from [ROUTE] in that it [DIFFERENCE].
-This difference is motivated by [PROBLEM PROPERTY] rather than by an additional heuristic component alone.
+The design addresses [PROBLEM PROPERTY]; the additional heuristic component alone does not explain this difference.
 ```
 
 ## 2. Background

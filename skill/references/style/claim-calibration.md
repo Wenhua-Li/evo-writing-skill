@@ -36,6 +36,23 @@
 
 不要通过叠加 `may`、`potentially`、`to some extent` 保留原强主张。
 
+也不得通过改换说法保留同一强主张：
+
+- 无规模化证据时，不能将 `scalable` 改为 `stable as the problem size grows`；
+- 无鲁棒性证据时，不能将 `robust` 改为 `stable`、`reliable` 或 `consistent`；
+- 无统计检验时，不能将 `significantly` 改为 `substantially`、`markedly` 或 `clearly better`；
+- 无比较证据时，不能写 `on the tested problems`、`the compared algorithms` 或任何实际性能优劣；
+- 不得把无依据的 `outperforms` 改成 `aims to outperform` 或类似研究目标，用目的句式保留同一宣传主张；
+- 无验证证据时，不得把 `certify/certified` 改成 `verify/verified/verification`；若实际行为只是比较搜索结果，写 `compare`。
+
+### Audit 中的 Revised text
+
+Audit 可以指出缺失证据，但修订文本同样受证据约束。用户没有提供实验时，不得为了给出完整句子而虚构 tested problems、compared algorithms、结果或实验范围。无法安全保留性能主张时，改成研究目的或设计对象；连研究目的也不清楚时，明确写无法在不补充证据的情况下修订该主张。
+
+对只有一个过强句子的 Audit，安全回退可以只写 `The proposed algorithm is designed for [PROBLEM].`。不要自行补充 small/limited budget、Pareto front approximation、评价成本构成或其他设计目标。
+
+强主张的释义、同义词和隐含版本与原始措辞接受同样的证据检查。
+
 ## 4. 因果边界
 
 - 消融结果支持机制归因，但仍要看实验设计是否排除了替代解释。

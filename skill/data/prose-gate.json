@@ -1,0 +1,360 @@
+{
+  "version": 1,
+  "blocked_terms": [
+    {
+      "id": "axes",
+      "pattern": "\\baxes\\b",
+      "message": "Use dimensions or objective coordinates; retain axes only for actual coordinate axes.",
+      "allow_patterns": [
+        "\\b(?:coordinate|objective|horizontal|vertical|x|y|z)[ -]axes\\b",
+        "\\baxes (?:labels?|limits?|scales?)\\b"
+      ]
+    },
+    {
+      "id": "synthetic",
+      "pattern": "\\bsynthetic(?:ally)?\\b",
+      "message": "Name the actual test problems, benchmarks, or simulated data.",
+      "allow_patterns": ["\\bsynthetic (?:data|datasets?)\\b"]
+    },
+    {
+      "id": "provenance",
+      "pattern": "\\bprovenance\\b",
+      "message": "Use source or origin."
+    },
+    {
+      "id": "admission",
+      "pattern": "\\badmi(?:t|ts|tted|tting|ssion|ssions)\\b",
+      "message": "State the actual acceptance, selection, or entry operation."
+    },
+    {
+      "id": "extreme",
+      "pattern": "\\bextreme(?:ly|s)?\\b",
+      "message": "State the actual values, solutions, or boundary conditions.",
+      "allow_patterns": [
+        "\\bextreme (?:solutions?|points?|values?|events?|value theory)\\b"
+      ]
+    },
+    {
+      "id": "declared",
+      "pattern": "\\bdeclar(?:e|ed|es|ing|ations?)\\b",
+      "message": "Use stated, specified, or reported."
+    },
+    {
+      "id": "protocol",
+      "pattern": "\\bprotocols?\\b",
+      "message": "Use experimental setup, procedure, settings, or the specific statistical test."
+    },
+    {
+      "id": "tie",
+      "pattern": "\\b(?:tie|ties|tied|tying)\\b",
+      "message": "Use equal scores, equal ranks, or the same result."
+    },
+    {
+      "id": "saturated",
+      "pattern": "\\bsaturat(?:ed|es|ing|ion)\\b",
+      "message": "State whether performance stops improving, reaches a plateau, or reaches capacity."
+    },
+    {
+      "id": "trajectory",
+      "pattern": "\\btrajector(?:y|ies)\\b",
+      "message": "Use search histories, sequences of solutions, or changes over generations.",
+      "allow_patterns": [
+        "\\b(?:robot|robotic|vehicle|aircraft|spacecraft)(?: motion)? trajector(?:y|ies)\\b",
+        "\\btrajectory (?:tracking|planning|optimization|control)\\b"
+      ]
+    },
+    {
+      "id": "certified",
+      "pattern": "\\bcertif(?:ied|ies|y|ying|ications?)\\b",
+      "message": "Use verified, proved, or guaranteed only when supported; otherwise remove the claim."
+    },
+    {
+      "id": "menu",
+      "pattern": "\\bmenus?\\b",
+      "message": "Remove the interface metaphor and state the actual choices or operations."
+    },
+    {
+      "id": "audit",
+      "pattern": "\\baudit(?:s|ed|ing)?\\b",
+      "message": "Keep Audit as a task mode name only; use check, review, or analysis in paper text."
+    },
+    {
+      "id": "inferred",
+      "pattern": "\\binfer(?:red|ring|s)?\\b",
+      "message": "Use estimated, derived, or suggested by the results according to the evidence."
+    },
+    {
+      "id": "trial",
+      "pattern": "\\btrials?\\b",
+      "message": "Use independent runs, tests, or candidate solutions; retain the DE term trial vector.",
+      "allow_patterns": ["\\btrial vectors?\\b"]
+    },
+    {
+      "id": "rival",
+      "pattern": "\\brivals?\\b",
+      "message": "Use competing algorithms, compared algorithms, or baselines."
+    },
+    {
+      "id": "refinement",
+      "pattern": "\\brefinements?\\b",
+      "message": "Name the local search, improvement, update, or other actual operation."
+    },
+    {
+      "id": "leverage",
+      "pattern": "\\bleverag(?:e|ed|es|ing)\\b",
+      "message": "Use use or state the actual operation."
+    },
+    {
+      "id": "harness",
+      "pattern": "\\bharness(?:ed|es|ing)?\\b",
+      "message": "Use use or state the actual operation."
+    },
+    {
+      "id": "orchestrate",
+      "pattern": "\\borchestrat(?:e|ed|es|ing|ion)\\b",
+      "message": "State the actual coordination or update steps."
+    },
+    {
+      "id": "delve",
+      "pattern": "\\bdelv(?:e|ed|es|ing)\\b",
+      "message": "Use examine, study, or analyze."
+    },
+    {
+      "id": "unlock",
+      "pattern": "\\bunlock(?:ed|s|ing)?\\b",
+      "message": "State the actual capability or result."
+    },
+    {
+      "id": "seamless",
+      "pattern": "\\bseamless(?:ly)?\\b",
+      "message": "Remove the promotional wording and state the actual interaction."
+    },
+    {
+      "id": "showcase",
+      "pattern": "\\bshowcas(?:e|ed|es|ing)\\b",
+      "message": "Use show, demonstrate, or report according to the evidence."
+    },
+    {
+      "id": "underscore",
+      "pattern": "\\bunderscore(?:d|s|ing)?\\b",
+      "message": "State the finding directly."
+    },
+    {
+      "id": "pivotal",
+      "pattern": "\\bpivotal\\b",
+      "message": "State the specific role or remove the evaluation."
+    },
+    {
+      "id": "realm",
+      "pattern": "\\brealms?\\b",
+      "message": "Name the actual field, problem class, or setting."
+    },
+    {
+      "id": "governance",
+      "pattern": "\\bgovernance\\b",
+      "message": "State the actual management or selection rule."
+    },
+    {
+      "id": "pipeline",
+      "pattern": "\\bpipelines?\\b",
+      "message": "Use procedure, sequence of steps, or the actual algorithm structure.",
+      "allow_patterns": ["\\b(?:data|image|signal|processing) pipelines?\\b"]
+    },
+    {
+      "id": "optimization-engine",
+      "pattern": "\\b(?:algorithmic|optimization|search) engines?\\b",
+      "message": "Use algorithm, optimizer, or the actual component name."
+    },
+    {
+      "id": "facilitate",
+      "pattern": "\\bfacilitat(?:e|ed|es|ing|ion)\\b",
+      "message": "Use a direct verb that states the actual effect."
+    },
+    {
+      "id": "intricate",
+      "pattern": "\\bintricate(?:ly)?\\b",
+      "message": "State the actual complexity or structure."
+    },
+    {
+      "id": "nuanced",
+      "pattern": "\\bnuanced\\b",
+      "message": "State the distinction directly."
+    },
+    {
+      "id": "journey",
+      "pattern": "\\bjourneys?\\b",
+      "message": "Remove the metaphor and state the actual process."
+    },
+    {
+      "id": "testament",
+      "pattern": "\\btestaments?\\b",
+      "message": "Remove the promotional evaluation and report the evidence."
+    },
+    {
+      "id": "unqualified-robust",
+      "pattern": "\\brobust(?:ness)?\\b",
+      "message": "Specify the perturbation and evidence, or remove the robustness claim.",
+      "allow_patterns": ["\\brobust(?:ness)?\\s+(?:to|against|under)\\s+[^,.;]+"]
+    },
+    {
+      "id": "unqualified-scalable",
+      "pattern": "\\bscalable\\b",
+      "message": "State the scaling dimension, range, and evidence, or remove the scalability claim.",
+      "allow_patterns": [
+        "\\bscalable\\s+(?:to|across)\\s+(?:up\\s+to\\s+)?\\d+[^,.;]*",
+        "\\bscalable\\s+with\\s+respect\\s+to\\s+(?:decision\\s+variables|objectives|constraints|instances|population\\s+size|data\\s+samples)\\b"
+      ]
+    }
+  ],
+  "blocked_phrases": [
+    {
+      "id": "rather-than",
+      "pattern": "\\brather\\s+than\\b",
+      "message": "Recast the contrast directly; do not replace this with another stock contrast phrase."
+    },
+    {
+      "id": "instead-of",
+      "pattern": "\\binstead\\s+of\\b",
+      "message": "State the actual operation directly; do not use this as a fallback for rather than."
+    },
+    {
+      "id": "research-interest",
+      "pattern": "\\bactive\\s+research\\s+(?:area|areas|field|fields)\\b|\\b(?:has|have)\\s+attracted\\s+(?:growing|increasing|considerable|extensive)\\s+(?:interest|attention)\\b|\\battract(?:s|ed|ing)?\\s+(?:growing|increasing|considerable|extensive)\\s+(?:interest|attention)\\b",
+      "message": "Replace the empty research-interest claim with the specific technical problem."
+    },
+    {
+      "id": "defensive-universality",
+      "pattern": "\\bwithout\\s+(?:claiming|assuming)\\b[^.!?]{0,120}\\b(?:best|optimal|superior|universal)\\b|\\b(?:does|do)\\s+not\\s+(?:establish|prove|demonstrate|show)\\s+(?:universal\\s+)?(?:superiority|optimality)\\b",
+      "message": "Remove the defensive universal disclaimer and report the actual scope or result."
+    },
+    {
+      "id": "unsupported-performance-aim",
+      "pattern": "\\b(?:aim|aims|aimed|goal)\\b[^.!?]{0,100}\\boutperform\\b",
+      "message": "Do not preserve an unsupported performance claim as an aim; state the actual research action."
+    },
+    {
+      "id": "statistical-test-dilution",
+      "pattern": "\\b(?:p\\s*[=<>]|statistically\\s+significant|significance).{0,120}?\\bexperimental\\s+setup\\b",
+      "message": "Keep the statistical test explicit when interpreting a p-value or significance claim."
+    },
+    {
+      "id": "empty-procedure-contrast",
+      "pattern": "\\b(?:without\\s+(?:relying\\s+on|requiring|using)|(?:does|do)\\s+not\\s+(?:rely\\s+on|require|use|depend\\s+on)|no)\\s+(?:a\\s+|an\\s+)?(?:separately\\s+)?(?:stated|declared|prespecified|predefined|preset|fixed)\\s+(?:selection\\s+)?(?:protocol|procedure|rule)\\b",
+      "message": "Delete the empty procedure contrast; do not preserve it with procedure, rule, or a synonym of declared."
+    },
+    {
+      "id": "process-report-in-paper",
+      "pattern": "\\bverified\\s+with\\b|\\bexit\\s+code\\s+\\d+\\b",
+      "message": "Keep tool commands, verification claims, and exit codes out of paper text."
+    },
+    {
+      "id": "generation-efficiency",
+      "pattern": "\\befficient\\b[^.!?]{0,100}\\b(?:generations?|iterations?)\\b|\\b(?:generations?|iterations?)\\b[^.!?]{0,100}\\befficient\\b",
+      "message": "Do not infer evaluation efficiency from generations or iterations; state the measured cost separately."
+    },
+    {
+      "id": "promotional-only-generations",
+      "pattern": "\\bonly\\s+\\d+\\s+(?:generations?|iterations?)\\b",
+      "message": "Remove the promotional emphasis; state the exact number without only or an upper-bound paraphrase."
+    },
+    {
+      "id": "do-not-claim",
+      "pattern": "\\bdo(?:es)?\\s+not\\s+claim\\b",
+      "message": "Remove the defensive disclaimer and state the actual scope directly."
+    },
+    {
+      "id": "hedged-significance",
+      "pattern": "\\bmay\\s+(?:potentially\\s+)?significantly\\b|\\bpotentially\\s+significantly\\b",
+      "message": "Do not preserve an unsupported significance claim with hedging."
+    },
+    {
+      "id": "colloquial-win",
+      "pattern": "\\bwins?\\s+everywhere\\b|\\bwinning\\s+everywhere\\b",
+      "message": "Remove the colloquial universal comparison and report the actual result."
+    },
+    {
+      "id": "stock-scalability-paraphrase",
+      "pattern": "\\b(?:stable|maintain(?:s|ed|ing)?|preserv(?:e|es|ed|ing)|consistent)(?:\\s+\\w+){0,3}\\s+as\\s+(?:the\\s+)?(?:problem\\s+)?(?:size|dimension|dimensionality|number\\s+of\\s+(?:(?:decision)\\s+)?(?:variables|objectives))\\s+(?:grows|increases)\\b",
+      "message": "Report the tested scaling range and results; do not preserve an unsupported scalability claim through paraphrase."
+    },
+    {
+      "id": "not-only-but-also",
+      "pattern": "\\bnot\\s+only\\b[^.!?\\n]{0,160}?\\bbut\\s+also\\b",
+      "message": "State the two facts directly without the correlative template."
+    },
+    {
+      "id": "not-x-but-y",
+      "pattern": "\\bnot\\b[^.!?;\\n]{0,140}?\\bbut\\b",
+      "message": "Rewrite the relation as direct statements."
+    },
+    {
+      "id": "worth-noting",
+      "pattern": "\\bit\\s+(?:is|was)\\s+worth\\s+noting\\b|\\bit\\s+should\\s+be\\s+noted\\b|\\bit\\s+is\\s+important\\s+to\\s+note\\b",
+      "message": "Delete the metadiscourse and state the fact."
+    },
+    {
+      "id": "role-template",
+      "pattern": "\\bplays?\\s+(?:a|an)\\s+(?:crucial|critical|vital|key|significant|important)\\s+role\\b",
+      "message": "State what the object actually does."
+    },
+    {
+      "id": "importance-template",
+      "pattern": "\\bthis\\s+(?:highlights|underscores|demonstrates|shows)\\s+the\\s+importance\\b",
+      "message": "Report the finding without explaining that it is important."
+    },
+    {
+      "id": "serves-as",
+      "pattern": "\\bserv(?:e|es|ed|ing)\\s+as\\b",
+      "message": "Use a direct verb or identify the actual component."
+    },
+    {
+      "id": "rapid-development",
+      "pattern": "\\bwith\\s+the\\s+rapid\\s+development\\s+of\\b",
+      "message": "Begin with the specific problem."
+    },
+    {
+      "id": "hot-topic",
+      "pattern": "\\b(?:has|have)\\s+become\\s+a\\s+hot\\s+topic\\b|\\battract(?:s|ed|ing)?\\s+(?:increasing|extensive|considerable)\\s+attention\\b",
+      "message": "Replace the importance claim with a concrete technical motivation."
+    },
+    {
+      "id": "well-known",
+      "pattern": "\\bit\\s+is\\s+well\\s+known\\s+that\\b|\\bas\\s+is\\s+well\\s+known\\b",
+      "message": "State the fact and its citation when needed."
+    },
+    {
+      "id": "promising-future",
+      "pattern": "\\bthe\\s+future\\s+looks\\s+promising\\b|\\bopens?\\s+(?:up\\s+)?a\\s+new\\s+(?:direction|avenue)\\b",
+      "message": "State the specific finding or remaining research question."
+    },
+    {
+      "id": "by-doing-so",
+      "pattern": "\\bby\\s+doing\\s+so\\b",
+      "message": "Use a direct connection or name the action."
+    },
+    {
+      "id": "wordy-purpose",
+      "pattern": "\\bin\\s+order\\s+to\\b|\\bdue\\s+to\\s+the\\s+fact\\s+that\\b",
+      "message": "Use to or because."
+    }
+  ],
+  "structure": {
+    "sentence_initial_transitions": [
+      "moreover",
+      "furthermore",
+      "in addition",
+      "besides",
+      "therefore",
+      "thus"
+    ],
+    "single_use_sentence_initial_transitions": [
+      "moreover",
+      "furthermore",
+      "in addition",
+      "besides"
+    ],
+    "max_consecutive_same_two_word_opening": 2,
+    "repeated_ngram_size": 6,
+    "max_repeated_ngram_occurrences": 1
+  }
+}

@@ -1,3 +1,55 @@
+# Release Notes — v0.5.0
+
+## Summary
+
+EvoWrite v0.5.0 replaces advisory humanizing rules with a mandatory rewrite and output-gate system. It targets incomplete polishing, engineering-flavored vocabulary, administrative metaphors, repeated stock contrasts, and persistent LLM phrasing while preserving research meaning and standard EC terminology.
+
+## Full paragraph rebuilding
+
+AI-heavy text is now rebuilt from a silent record of the research meaning. The Skill no longer accepts isolated synonym replacement as a sufficient rewrite. Clean technical prose is left alone when further editing would add no value.
+
+## Hard language gate
+
+- New `plain-ec-english.md` defines plain, concrete EC academic English.
+- New `revision-gate.md` defines delivery-blocking vocabulary, phrase, repetition, and structure failures.
+- New `skill/data/prose-gate.json` is the single source of machine-checkable rules and narrow technical exceptions.
+- New `tools/scripts/check_prose.py` checks exact candidate text and returns a nonzero status on any unapproved hit.
+- `rather than`, stock `not X but Y`, repeated transitions, repeated sentence openings, and repeated non-technical n-grams are covered.
+
+The gate applies to drafting, rewriting, and voice matching. Original wording does not receive an exemption. Standard technical usage such as DE `trial vector` and actual physical trajectories is protected by narrow exceptions.
+
+Paired fresh-agent evaluation also exposed and fixed subtler bypasses: `instead of` cannot replace `rather than` as a stock contrast, robustness and scalability claims cannot survive through paraphrase, method names cannot be expanded into invented implementation steps, and Audit revisions cannot assert experiments or comparisons that were never supplied.
+
+Release archives are now built strictly from `install-manifest.txt`, so unrelated development assets are not packaged into the Skill.
+
+## References and examples
+
+Overlapping style documents have been consolidated. Method and experiment guides no longer encourage one fixed paragraph shape or mandatory RQ lists. Every recommended After example is checked by the release build.
+
+## Evaluation
+
+- Added 12 realistic language-rewrite cases to the existing evidence and terminology cases.
+- Added deterministic clean/blocked fixtures and unit tests for inflections, case, exceptions, repeated patterns, and command-line exit status.
+- Release validation checks the lexicon, fixtures, and all recommended After examples.
+
+## Compatibility
+
+- Skill name remains `evo-write`.
+- Normal rewriting still returns English paper text only.
+- Audit reports remain available only when requested.
+- Installers default to `v0.5.0`.
+- The checker uses only the Python standard library; no new package dependency is introduced.
+
+## Evidence and safety boundary
+
+- Source TEVC papers are not included.
+- 2024+ and unassigned early-access material remain excluded.
+- Public data are aggregate statistics and original guidance, not reconstructable raw corpus text.
+- EvoWrite is independent of IEEE and TEVC editorial policy.
+- It does not guarantee publication or AI-detector outcomes.
+
+---
+
 # Release Notes — v0.4.0
 
 ## Summary
@@ -38,11 +90,3 @@ Skill runtime material now lives in `skill/`. Documentation, cases, release note
 - Public data are aggregate statistics and original guidance, not reconstructable raw corpus text.
 - EvoWrite is independent of IEEE and TEVC editorial policy.
 - It does not guarantee publication or AI-detector outcomes.
-
-## Verification
-
-- Repository restructure validated with Git rename history.
-- Skill paths updated from `references/` to `skill/references/`.
-- Release package checked for required entrypoint, payload layout, private paths, and excluded raw corpus data.
-- Local installer and doctor checks run against the restructured package.
-- Public installation and Pages verification performed after release.

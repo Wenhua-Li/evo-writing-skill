@@ -1,0 +1,192 @@
+[
+  {
+    "id": "engineering-lexicon-method",
+    "mode": "rewrite",
+    "input": "Use evo-write. Rewrite this method paragraph in plain, natural EC English and return only the revised text: The optimization engine orchestrates a menu of refinement operators. It uses inferred provenance to regulate archive admission, and its search trajectories are certified against rival algorithms. Rather than using a declared protocol, the method lets extreme solutions saturate the archive after repeated trials.",
+    "must": [
+      "Rebuild the paragraph instead of making isolated synonym substitutions",
+      "Remove all non-exception prose-gate terms and stock contrast patterns",
+      "Make the algorithm operations understandable without software or management metaphors",
+      "Calibrate or remove unsupported certification language; use compares for search histories and do not substitute verifies without validation evidence",
+      "Delete the empty no-fixed-procedure contrast instead of paraphrasing it"
+    ],
+    "must_not": [
+      "Add numerical settings, new operators, or experimental results",
+      "Retain rather than, engine, orchestrates, menu, refinement, inferred, provenance, admission, trajectories, certified, rival, declared, protocol, saturate, or trials in general rhetoric"
+    ],
+    "notes": "Adversarial case covering the reported engineering and administrative vocabulary."
+  },
+  {
+    "id": "repeated-rather-than",
+    "mode": "rewrite",
+    "input": "Use evo-write. Humanize this paragraph and return only revised English: The method uses variable grouping rather than full-dimensional updates. It updates the archive every ten generations rather than every generation. It uses IGD+ rather than hypervolume to measure convergence.",
+    "must": [
+      "Preserve grouping, the ten-generation update interval, and the IGD+ measurement",
+      "Use direct statements with varied sentence structure",
+      "Produce zero occurrences of rather than"
+    ],
+    "must_not": [
+      "Replace every rather than with instead of",
+      "Change the update interval or indicator",
+      "Add a reason for any design choice"
+    ],
+    "notes": "Checks repeated stock contrasts and factual preservation."
+  },
+  {
+    "id": "binary-contrast-templates",
+    "mode": "rewrite",
+    "input": "Use evo-write. Rewrite this passage without template-like contrasts: The aim is not to reduce runtime but to reduce exact evaluations. The method is not only effective on unimodal problems but also stable on multimodal problems.",
+    "must": [
+      "State the evaluation-cost distinction directly",
+      "Preserve both problem classes and the original strength of the claims",
+      "Remove not-X-but-Y and not-only-but-also structures"
+    ],
+    "must_not": [
+      "Add wall-clock results or a stability mechanism",
+      "Use rather than or another repeated correlative template"
+    ],
+    "notes": "Checks structural AI patterns beyond individual words."
+  },
+  {
+    "id": "de-trial-vector-exception",
+    "mode": "rewrite",
+    "input": "Use evo-write. Polish this DE method sentence without changing its technical meaning: It is worth noting that the proposed optimization engine leverages the target vector and the donor vector to facilitate the generation of a trial vector.",
+    "must": [
+      "Preserve target vector, donor vector, and trial vector exactly",
+      "Remove metadiscourse, software metaphor, and inflated verbs",
+      "Return a clear direct method statement"
+    ],
+    "must_not": [
+      "Rename trial vector as candidate vector",
+      "Add a DE mutation strategy or parameter setting"
+    ],
+    "notes": "Ensures the hard gate does not damage standard DE terminology."
+  },
+  {
+    "id": "physical-trajectory-exception",
+    "mode": "rewrite",
+    "input": "Use evo-write. Rewrite this application sentence in plain English: The proposed algorithm leverages evolutionary search to facilitate robot trajectory planning rather than relying on a declared protocol.",
+    "must": [
+      "Retain the physical robot trajectory meaning",
+      "Remove leverage, facilitate, rather than, declared protocol, and the entire empty procedure contrast",
+      "Do not preserve the contrast as stated, prespecified, or fixed procedure",
+      "Avoid inventing a planning method"
+    ],
+    "must_not": [
+      "Replace the physical trajectory with search history",
+      "Add robot dynamics or experimental settings"
+    ],
+    "notes": "Checks a narrow application-specific exception."
+  },
+  {
+    "id": "preserve-results-citations",
+    "mode": "rewrite",
+    "input": "Use evo-write. Humanize this results paragraph while preserving all evidence: Rather than proving universal superiority, the results in Table II show that our algorithm reduces exact evaluations by 38% compared with its rival [12], with p = 0.03 under the stated test protocol. The improvement was obtained from 20 independent runs, although the mean accuracy was 1.2 points lower on the multimodal instances.",
+    "must": [
+      "Preserve Table II, 38%, [12], p = 0.03, 20 independent runs, and the 1.2-point lower accuracy",
+      "Keep the stated statistical test explicit; do not replace it with experimental setup",
+      "Remove the negative universal disclaimer rather than reframing it",
+      "Keep the multimodal exception and avoid a universal performance claim",
+      "Remove rather than, rival, and protocol"
+    ],
+    "must_not": [
+      "Change any number, citation, statistical meaning, or comparison condition",
+      "Delete the negative result"
+    ],
+    "notes": "Checks that aggressive language rewriting does not damage evidence."
+  },
+  {
+    "id": "clean-text-minimal-edit",
+    "mode": "rewrite",
+    "input": "Use evo-write. Polish only if needed and preserve the text otherwise: At each generation, the algorithm estimates variable interactions from the current population. Variables with strong estimated interactions are assigned to the same group. Each group is updated while the remaining variables keep their current values.",
+    "must": [
+      "Keep the clean technical meaning and paragraph organization",
+      "Avoid unnecessary synonym variation",
+      "Return publication-ready English only"
+    ],
+    "must_not": [
+      "Add thresholds, costs, results, or new mechanisms",
+      "Replace clear wording with inflated terminology"
+    ],
+    "notes": "Prevents the full-rewrite policy from damaging text that is already clean."
+  },
+  {
+    "id": "voice-match-no-override",
+    "mode": "voice-match",
+    "input": "Use evo-write. Match the rhythm of this author sample, but rewrite the target passage: SAMPLE: Rather than presenting a rigid protocol, we leverage simple operators. The optimization engine orchestrates refinement. TARGET: The method uses variable grouping to reduce the number of decision variables changed in each update.",
+    "must": [
+      "Match only useful rhythm and directness",
+      "Preserve the target's variable-grouping meaning and reduced quantity",
+      "Use fewer variables or an equivalent relative quantity; never change fewer to a few",
+      "Do not add grouping time, one-group assumptions, or other details absent from the target",
+      "Reject the sample's rather than, leverage, optimization engine, orchestrates, and refinement"
+    ],
+    "must_not": [
+      "Copy forbidden wording from the author sample",
+      "Add results or operator details"
+    ],
+    "notes": "Ensures voice matching cannot bypass the hard language gate."
+  },
+  {
+    "id": "ai-heavy-abstract-rebuild",
+    "mode": "rewrite",
+    "input": "Use evo-write. Rewrite this abstract opening without adding research content: In the realm of large-scale optimization, the proposed optimization engine harnesses intricate variable interactions to unlock seamless convergence. It orchestrates a menu of refinement operators rather than using conventional mutation, thereby facilitating robust and scalable performance.",
+    "must": [
+      "Rebuild the syntax around the actual algorithm operations supported by the input",
+      "Remove all promotional, software, and stock-contrast wording",
+      "Remove robust and scalable claims and their paraphrases when no supporting evidence is supplied",
+      "Do not use instead of as a fallback for rather than"
+    ],
+    "must_not": [
+      "Add dimensions, benchmarks, numbers, or results",
+      "Replace the listed words with equally inflated synonyms"
+    ],
+    "notes": "Checks substantial rewriting rather than surface polishing."
+  },
+  {
+    "id": "synthetic-data-exception",
+    "mode": "rewrite",
+    "input": "Use evo-write. Polish this experiment sentence: The evaluation protocol leverages synthetic data to facilitate a controlled comparison of the two algorithms.",
+    "must": [
+      "Retain synthetic data as the stated data category",
+      "Replace protocol, leverages, and facilitate with plain academic wording",
+      "Preserve the controlled comparison"
+    ],
+    "must_not": [
+      "Change synthetic data to real-world data",
+      "Add dataset names, sample sizes, or outcomes"
+    ],
+    "notes": "Checks the explicit data-category exception."
+  },
+  {
+    "id": "extreme-solutions-exception",
+    "mode": "rewrite",
+    "input": "Use evo-write. Polish this multiobjective method sentence: The environmental selection leverages extreme solutions to facilitate boundary preservation rather than relying on a declared protocol.",
+    "must": [
+      "Retain extreme solutions as the technical object if needed",
+      "Remove inflated verbs, stock contrast wording, and any empty stated-or-prespecified procedure tail",
+      "State only the environmental-selection operation directly"
+    ],
+    "must_not": [
+      "Change the meaning to extreme runtime or extreme performance",
+      "Add a reference vector or selection rule"
+    ],
+    "notes": "Checks a multiobjective technical exception without allowing surrounding AI prose."
+  },
+  {
+    "id": "administrative-metaphor-application",
+    "mode": "rewrite",
+    "input": "Use evo-write. Rewrite this method description in traditional academic English: A governance rule certifies admission to the elite archive, and a menu of local refinements is selected when the search trajectories saturate.",
+    "must": [
+      "Replace governance, certifies, admission, menu, refinements, trajectories, and saturate",
+      "Describe only the archive rule, local searches, and stopping or stagnation condition supported by the sentence",
+      "Preserve selection of one operator from the set; do not apply the entire set",
+      "Keep the result comprehensible to an EC reader"
+    ],
+    "must_not": [
+      "Invent thresholds, guarantees, or local-search operators",
+      "Use new administrative metaphors"
+    ],
+    "notes": "Checks generalization to administrative metaphors not all explicitly listed by the user."
+  }
+]

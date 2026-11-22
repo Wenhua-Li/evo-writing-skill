@@ -1,6 +1,6 @@
 # 理论、基准与指标论文
 
-本文件覆盖三类研究：理论分析、benchmark/test problem、performance indicator/评价协议。它们共同的重点是**定义、假设、适用范围和可复核性**。
+本文件覆盖三类研究：理论分析、benchmark/test problem、performance indicator/评价方法。它们共同的重点是**定义、假设、适用范围和可复核性**。
 
 ## 1. 理论论文
 
@@ -8,7 +8,7 @@
 
 理论论文不是“公式很多的论文”。至少需要：
 
-1. 分析对象：算法、算子、种群模型或评价协议。
+1. 分析对象：算法、算子、种群模型或评价方法。
 2. 数学模型：哪些简化是分析模型的一部分。
 3. 假设：有限搜索空间、独立同分布、选择方式、噪声模型等。
 4. 命题：收敛、期望首次命中时间、稳定性、复杂度或界。
@@ -49,7 +49,7 @@
 - Construction and formal properties
 - Controllable difficulty dimensions
 - Reference/known solutions（如适用）
-- Evaluation protocol
+- Evaluation procedure
 - Demonstration experiments
 - Usage guidance and limitations
 
@@ -57,7 +57,7 @@
 
 - 用“realistic”描述合成 benchmark，但没有真实问题证据。
 - 只展示新算法在新 benchmark 上表现好，形成自我验证。
-- 不公开生成参数、代码、参考解或评价协议。
+- 不公开生成参数、代码、参考解或评价方法。
 - 把 benchmark 的覆盖范围写成“general-purpose”，但没有 instance-space 或性质覆盖分析。
 
 ## 3. Indicator / Performance Assessment 论文
@@ -86,7 +86,7 @@
 - 验证定义和构造性质；
 - 展示不同算法如何暴露 benchmark/指标的区分度；
 - 检查理论预测与有限样本行为的差距；
-- 展示错误使用协议时会发生什么。
+- 展示错误的实验设置如何影响结果。
 
 不要把演示实验写成“新 benchmark 证明某算法全面最优”。
 

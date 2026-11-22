@@ -15,19 +15,9 @@ Method 章节必须让读者理解并复现“算法如何运作”，同时看�
 
 ## 2. 组件写法
 
-每个组件采用同一问题链：
+每个组件都应在适当位置交代：处理什么困难、输入与输出、操作规则、与已有方法的差异，以及成本、参数和适用条件。
 
-1. 这个组件处理什么困难？
-2. 输入是什么，输出是什么？
-3. 操作规则是什么？
-4. 与已有方法的关键差异是什么？
-5. 成本、参数和适用条件是什么？
-
-```text
-To address [DIFFICULTY], [COMPONENT] [OPERATION].
-Given [INPUT], it first [STEP], then [STEP], and finally returns [OUTPUT].
-This design differs from [PRIOR MECHANISM] in that [EXACT DIFFERENCE].
-```
+这些信息按理解机制所需的顺序呈现，不要求每个组件都重复同一种句式。简单组件可以一句说清；核心组件需要展开操作时，再分步骤说明。避免连续段落都以 `To address...`、`Given...`、`This design differs...` 开头。
 
 ## 3. 伪代码
 

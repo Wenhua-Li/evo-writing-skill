@@ -24,7 +24,7 @@ Run these before submitting:
 
 ```bash
 python -m py_compile tools/scripts/*.py
-python tools/scripts/build_release.py --root . --version v0.4.0
+python tools/scripts/build_release.py --root . --version v0.5.0
 ```
 
 If you edit corpus analysis outputs, rerun the relevant analysis script and explain the change.

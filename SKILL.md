@@ -1,124 +1,146 @@
 ---
 name: evo-write
 description: >-
-  Natural, evidence-aware writing and humanizing for Evolutionary Computation papers. EvoWrite removes AI tells, template prose, defensive writing, and translated academic phrasing while preserving claims, evidence, EC terminology, and the author's voice. Use for TEVC/EC/EA/EMO abstracts, introductions, related work, methods, experiments, conclusions, full-section rewrites, drafting from research notes, author voice matching, and pre-submission checks. Returns English paper text by default; diagnostics are provided only when requested. Never fabricate citations, experiments, numbers, statistical tests, complexity results, theorems, or conclusions.
+  Plain, natural, evidence-aware writing and humanizing for Evolutionary Computation papers. Use EvoWrite for TEVC/EC/EA/EMO abstracts, introductions, related work, methods, experiments, conclusions, full-section rewrites, drafting from notes, author voice matching, and pre-submission checks. It rebuilds AI-sounding prose instead of lightly polishing it, removes software metaphors, inflated wording, stock contrasts, and repeated LLM phrasing, and applies a mandatory language gate before delivery while preserving facts, evidence, and standard EC terminology. Returns English paper text by default; diagnostics are provided only when requested. Never fabricate citations, experiments, numbers, statistical tests, complexity results, theorems, or conclusions.
 metadata:
-  version: "0.4.0"
+  version: "0.5.0"
 ---
 
 # EvoWrite
 
-把 EC 论文写成一位熟悉领域、知道证据边界的研究者会自然写出的样子：直接、具体、克制、技术准确，而不是模板工整、句句防御、处处像助手报告。
+把 EC 论文写成研究者清楚、直接、容易理解的英文。专业感来自准确的概念、具体的机制和可信的证据，不来自生僻词、软件隐喻、抽象名词或过分工整的句式。
 
-这个 Skill 的首要产物是**可用的英文论文文本**。证据检查在后台完成；只有用户明确要求审查、解释或风险评估时，才输出诊断报告。
+首要产物是**可直接使用的英文论文文本**。检查在后台完成；只有用户明确要求审查、解释或风险评估时才输出诊断报告。
 
-## 0. 核心原则
+## 0. 不可协商的原则
 
-1. **保留研究含义。** 不新增、不删除、不弱化作者有依据的事实、数值、引用、机制、比较、定理或结论。
-2. **不编造证据。** 没有提供的内容不能写成事实。缺失时用更一般的可支撑表述，或在文后简短列出。
-3. **直接但有边界。** 删除防御性套话，不删除影响有效性、解释、适用范围、研究设计或读者正确使用的必要限定。
-4. **段落级重写。** 不做机械同义替换；围绕每段的中心任务重新组织句子和节奏。
-5. **领域准确优先于华丽。** EC 术语、指标、空间、成本口径和实验结论必须准确。
-6. **不以欺骗 AI 检测器为目标。** 目标是让认真审稿的读者觉得自然、清楚、像研究者本人修改过。
+1. **保留研究含义。** 不新增、不删除、不弱化有依据的事实、数值、引用、机制、比较、定理、负结果或结论。
+2. **不编造证据。** 没有提供的内容不能写成事实。不得为了把句子写顺而补充实验设置、数值、因果关系或限制。
+3. **技术准确优先。** 标准 EC 术语、指标、空间、成本口径和符号不能为了“通俗”而改错。
+4. **语言门禁不可豁免。** 原文已有、作者声音匹配、追求句式变化或自认为更高级，都不是保留违禁表达的理由。
+5. **命中必须返工。** 不得把命中项解释为“可以接受”后交付，也不得输出带剩余警告的文本。
+6. **不以欺骗 AI 检测器为目标。** 验收标准是研究者读起来清楚、自然、没有工程腔和模板腔。
 
-## 1. 先选择任务模式
+优先级为：事实与证据 > 技术准确 > 语言门禁 > 作者声音与其他风格偏好。技术例外只按 `skill/references/style/plain-ec-english.md` 的窄规则处理。
+
+## 1. 任务模式
 
 ### Rewrite / Humanize（默认）
 
-用户提供已有英文或中文草稿，要求去 AI 味、去模板味、去防御性写作或提升 EC 专业感。
-
-默认输出：只给修改后的英文文本。可在文后给不超过三条必要说明；不要默认给长诊断。
+对已有英文或中文草稿进行段落级重建。默认只返回修改后的英文文本。
 
 ### Draft
 
-用户提供研究笔记、实验信息或中文材料，要求起草摘要、引言、方法、实验或结论。
+从研究笔记或实验信息起草。先静默建立 claim–evidence 对应，再写英文；证据不足的主张不写死。
 
-先静默建立 claim–evidence 对应关系，再写英文。证据不足的主张不要写死。
+**方法名称不等于内部机制。** 只给出“GP-assisted DE”或类似名称时，不得自行补写候选筛选、训练集构造、模型更新、归档、预算分配或选择步骤。不得添加分钟数、评价次数、benchmark、基线或实验结果作为“示例”。成熟领域背景只能用于解释普遍概念，不能用来虚构本文设计。
+
+**稀疏材料启用短草稿模式。** 如果输入只有问题、方法名称和目标，没有机制与证据，禁止生成完整多段 Introduction。论文正文最多 80 个英文词，只写“本文研究什么、用于什么问题、目标是什么”；随后最多列三项缺失信息，优先询问机制。不得写文献路线评价、具体算法流程、planned experimental study、固定预算、指标或结果。缺少这些信息时，短而完整的安全文本优于看似充实但虚构的引言。
 
 ### Voice Match
 
-用户提供作者自己的英文样本。先提取其句长、段落长度、连接方式、术语习惯、标点和人称，再按该声音改写。作者样本优先于通用 TEVC 风格。
+从作者样本提取句长、段落长度、人称、连接方式和术语习惯。样本只影响节奏与声音，**不能重新引入门禁禁止的词汇和句式**。不得从样本或自身推测为目标段落添加时间顺序、分组数量、单个/多个算子或内部机制；目标段落没有提供的事实一律不得出现。
 
 ### Section Pass
 
-用户指定某一章。按该章任务精修：
-
-- Abstract：直接、具体、少套话；
-- Introduction：快速进入问题、缺口和设计动机；
-- Method：机制清楚、可复现、不宣传；
-- Experiments/Results：设置可核查，结果先于解释；
-- Conclusion：收束贡献和边界，不重复宣传。
+按章节任务精修：Abstract 直接具体；Introduction 快速进入问题与设计动机；Method 清楚可复现；Experiments/Results 先给条件和观察再解释；Conclusion 收束发现与范围。
 
 ### Audit
 
-用户明确要求“审查、诊断、风险报告、投稿前检查”时，才使用报告格式。可参考 `skill/references/style/claim-calibration.md` 和 `skill/templates/submission-checklist.md`。
+只有用户明确要求审查、诊断、风险报告或投稿前检查时才输出报告。报告可以讨论命中项，但其中的 Revised text 仍须通过全部门禁与证据检查。
 
-## 2. 最小路由
+用户没有提供实验、基线或结果时，Revised text 不得写 `on the tested problems`、`the compared algorithms`、`outperformed` 或其他暗示已有比较证据的句子。无法安全保留性能主张时，只写研究目的或设计对象；连这些也不清楚时，说明无法在不补充证据的情况下修订，不得编造一个看似完整的版本。
 
-按任务读取最少文件，不要一次加载全部规则。
+对只有一个过强句子的 Audit，安全回退可以只写 `The proposed algorithm is designed for [PROBLEM].`。不得自行添加 small/limited budget、approximate the Pareto front、评价成本构成或算法目标；这些信息必须来自原材料。
 
-- 去 AI 味/防御性改写：`skill/references/style/ec-ai-tells.md`、`skill/references/style/anti-defensive-ec.md`、`skill/references/style/human-scholarly-voice.md`
-- 从零起草：`skill/references/workflow.md`、相应 `article-types/`、相应 `sections/`、相应 `domains/`
+## 2. 强制读取与补充路由
+
+**所有写作、起草、改写和声音匹配任务都必须读取：**
+
+- `skill/references/style/plain-ec-english.md`
+- `skill/references/style/revision-gate.md`
+- `skill/data/prose-gate.json`
+
+“最少文件”只适用于以下补充资料，不能用来跳过上述三份门禁文件：
+
+- 证据与术语：`skill/references/style/claim-calibration.md`、`skill/references/style/terminology.md`
+- 从零起草：`skill/references/workflow.md`、相应 `article-types/`、`sections/`、`domains/`
 - 多目标或问题环境：`skill/references/domains/multiobjective.md`、`skill/references/domains/problem-environments.md`
-- 方法与术语：`skill/references/domains/method-families.md`、`skill/references/style/terminology.md`
-- 投稿前 Audit：`skill/references/style/claim-calibration.md`、`skill/templates/submission-checklist.md`
+- 方法谱系：`skill/references/domains/method-families.md`
+- 投稿前检查：`skill/templates/submission-checklist.md`
 - 语料证据边界：`skill/references/evidence/`
 
-## 3. 重写管线
+## 3. 强制重写管线
 
-1. **保留语义地图。** 标出问题、方法、数据、基线、指标、数值、引用、条件和结论。
-2. **静默证据检查。** 区分事实、解释、推测和无依据强主张；不把审核过程写进正文。
-3. **标记 AI 痕迹。** 检查机械套话、过度解释、假精确、重复句式、格式化贡献列表和空洞总结。
-4. **删除防御性表达。** 去掉道歉、重复免责声明、叠加 hedging 和无信息量的 “not X but Y”。
-5. **正向重建议证。** 先说研究做了什么、机制是什么、证据显示什么；范围用正向表述说明。
-6. **调整节奏。** 改变句长、段落长度、主语和连接方式，让文本不像统一模板。
-7. **核对领域术语。** 检查 PS/PF、convergence/diversity、FEs/runtime、objective/fitness、feasibility 等。
-8. **事实差异复核。** 确认没有新增或丢失事实，没有因果越界，没有偷换比较条件。
+### 第一步：建立语义清单
 
-## 4. 反防御写作
+静默记录问题、方法、输入输出、条件、数字、引用、公式、基线、指标、成本口径、因果强度和结论范围。后续只能重组这些已有信息，不能借润色补充研究内容。
 
-用 claim-forward 和 positive scope 替代预防式措辞。
+### 第二步：确定每段任务
 
-- 少写：`We do not claim that...`
-- 改写为：`The evaluation focuses on...`
-- 少写：`may potentially suggest`
-- 改写为：`suggests` / `indicates` / `is associated with`
-- 少写：`Although this study has limitations...`
-- 改写为：在 Methods、Discussion 或 Limitations 中写一次具体边界。
+判断该段是在定义问题、解释困难、比较方法、描述机制、报告观察、解释结果还是限定范围。一段不要同时承担过多任务。
 
-必要的限制只写一次，并放在读者需要它的位置。
+### 第三步：脱稿重建
 
-## 5. 缺失信息时的处理
+放下原句的表面形式，根据语义清单重新写段落。允许拆分、合并、改变主语、调整信息顺序和删除无信息句子。
+
+如果原文含有工程隐喻、密集抽象名词、重复模板或明显的 AI 腔，禁止沿用原句骨架做近义词替换。原有文字已经自然准确时，不做为改而改。
+
+### 第四步：执行 Plain-EC 重写
+
+把抽象评价改成具体对象与动作，把软件/管理/营销隐喻改成实际算法操作，把格式化对比改成直接陈述。优先使用普通学术动词，不追求“高级”替换词。
+
+### 第五步：扫描候选成稿
+
+对**准备交付的完整最终文本**检查：
+
+- `prose-gate.json` 中的全部词汇、变体和短语；
+- 连续重复连接词、相同句首、相同段首和非技术性重复 n-gram；
+- 未入表但同属工程隐喻、宣传腔或无信息抽象表达的措辞；
+- 机械三点贡献、强制 RQ、均匀段落和每句过度平滑完整等结构问题。
+
+有执行环境时，从 Skill 根目录将最终候选文本通过标准输入交给：
+
+```bash
+python tools/scripts/check_prose.py -
+```
+
+没有执行环境时，必须按同一份 JSON 和规范逐项自检。不得声称未实际运行的检查已经通过。
+
+### 第六步：命中后重建并重新扫描
+
+任何非例外命中都判定为失败。回到整个句子或段落重建，不做孤立的同义词替换，然后重新扫描完整文本，直到没有命中。
+
+### 第七步：事实回查
+
+逐项核对语义清单。特别检查数字、引用、算法名称、公式、比较条件、指标方向、统计含义、负结果和适用范围。语言变简单不能以提高主张强度为代价。
+
+强主张不能用同义或隐含说法绕过：无规模化证据时删除 `stable as the problem size grows` 等表述；无鲁棒性证据时不得改成 `stable/reliable`；无统计检验时不得改成 `substantially/markedly`；无比较证据时不得写 `on the tested problems` 或 `outperformed the compared algorithms`。检查的是实际主张，不只是关键词。
+
+数量、范围和集合操作也必须保持不变：不得混淆 `only/within/at least`、`fewer/a few`，不得把单数操作写成应用整个集合，也不得改变选择范围。`only 20 generations` 中的宣传性强调应改为中性的 `exactly 20 generations`，不能改成上界 `within 20 generations`。p 值和显著性必须保留明确的 statistical test，不能泛化成 experimental setup。
+
+## 4. 技术例外与保留文本
+
+例外只保护不可替代的技术含义，例如 DE 的 `trial vector`、机器人实际运动轨迹、明确的 `synthetic data`、图形的实际坐标轴和已有文献中的 `extreme solutions`。
+
+不得主动引入例外词做风格变化。原文没有该技术含义时不能使用；存在普通且同样准确的表达时优先普通表达。引用标题、正式算法名称、公式和直接引语保持原样。
+
+## 5. 缺失信息
 
 - 缺失不影响当前句子：不写备注，直接完成。
-- 缺失影响局部主张：删除或改成有依据的更一般表述。
-- 缺失影响整段成立：跳过该段，文后用 1–3 条列出需要的信息。
-- 只有用户明确要求 skeleton/outline 时，才使用 `[MISSING]` 一类占位符。
+- 缺失影响局部主张：删除或改为材料能够支持的一般表述。
+- 缺失影响整段成立：跳过该段，文后最多列三项关键缺失。
+- 只有用户明确要求 skeleton/outline 时才使用 `[MISSING]` 占位符。
 
 ## 6. 输出约定
 
-### 默认改写
+### 默认改写、起草与 Voice Match
 
 ```text
-[只输出修改后的英文论文文本]
+[只输出已经通过门禁的英文论文文本]
 ```
 
-### 起草但信息不足
-
-```text
-[能安全写出的英文文本]
-
-还需要补充：
-- [最多三项关键缺失信息]
-```
-
-### Voice Match
-
-```text
-[按作者样本改写后的英文文本]
-```
-
-除非用户要求，不输出声音分析表。
+起草因信息不足无法完成时，可在文后最多增加三项关键缺失信息。除此之外不输出词表扫描结果、修改总结或自检说明。
 
 ### Audit
 
@@ -129,9 +151,15 @@ metadata:
 ## Remaining decisions for the author
 ```
 
-## 7. 语言约定
+只有 Revised text 属于论文正文；报告其他部分可以引用被检查的问题词。
 
-- 解释和必要提问用中文，论文正文默认英文。
-- 英文应像研究者修改过：具体、紧凑、有节奏变化，而不是每句都同样完整平滑。
-- 少用元话语、空泛副词和格式化转折。
-- 不为显得专业而堆高频词；专业感来自概念准确、证据匹配和清楚的技术选择。
+## 7. 交付条件
+
+只有同时满足以下条件才可以交付：
+
+- 没有未获窄技术例外的门禁命中；
+- `rather than` 和格式化 `not X but Y` 没有出现；
+- 不是对 AI 腔原文的浅层替换；
+- 没有连续模板句和不必要的重复连接词；
+- 事实、证据、术语与比较范围保持不变；
+- 文本对 EC 读者直接、清楚、可理解。

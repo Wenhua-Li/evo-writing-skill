@@ -39,10 +39,23 @@ Expected behavior:
 
 - no long diagnostic report;
 - no invented evidence;
-- revised English text first;
+- no unapproved blocked wording or stock contrast patterns;
+- substantial paragraph rebuilding when light editing is insufficient;
 - necessary scope kept once.
 
-## 3. Draft from notes
+## 3. Hard language gate
+
+EvoWrite reads `skill/references/style/plain-ec-english.md`, `skill/references/style/revision-gate.md`, and `skill/data/prose-gate.json` for every writing task. A blocked expression requires another rewrite before delivery.
+
+To run the deterministic checker yourself, pass the complete candidate text through standard input:
+
+```bash
+python tools/scripts/check_prose.py -
+```
+
+Use `--json` for structured findings. The process returns 0 for accepted text and 1 when any rule is violated. Narrow technical exceptions, such as the DE term `trial vector`, are defined in the JSON file.
+
+## 4. Draft from notes
 
 ```text
 Use evo-write. Draft an introduction from these notes:
@@ -54,7 +67,7 @@ Do not invent baselines or numerical results.
 
 If key information is missing, EvoWrite writes only what is supported and lists at most three missing details after the draft.
 
-## 4. Voice matching
+## 5. Voice matching
 
 ```text
 Use evo-write. Match the rhythm and terminology of this author sample:
@@ -64,10 +77,12 @@ Now rewrite this passage in the same voice:
 [paste target text]
 ```
 
-## 5. Audit
+Voice matching cannot reintroduce wording blocked by the language gate.
+
+## 6. Audit
 
 ```text
 Use evo-write in Audit mode. Check this paragraph for unsupported significance, robustness, scalability, efficiency, and optimality claims.
 ```
 
-Audit returns a report because you explicitly asked for one. Normal rewriting returns only the text.
+Audit returns a report because you explicitly asked for one. Normal rewriting returns only the text. The Revised text in an Audit report must also pass the language gate.

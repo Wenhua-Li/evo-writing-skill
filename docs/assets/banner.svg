@@ -52,7 +52,7 @@
   <g transform="translate(112 78)">
     <rect x="0" y="0" width="164" height="42" rx="21" fill="url(#glass)" stroke="#67e8f9" stroke-opacity=".28"/>
     <circle cx="25" cy="21" r="7" fill="#5eead4"/>
-    <text x="43" y="29" fill="#bae6fd" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="650">v0.4.0 · Agent Skill</text>
+    <text x="43" y="29" fill="#bae6fd" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="650">v0.5.0 · Agent Skill</text>
     <text x="0" y="132" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="96" font-weight="760" letter-spacing="-2">EvoWrite</text>
     <text x="2" y="204" fill="#bae6fd" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="35" font-weight="500">Natural writing for Evolutionary Computation papers</text>
     <text x="2" y="257" fill="#94a3b8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24">Evidence-aware rewriting without defensive or AI-sounding prose</text>

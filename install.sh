@@ -5,7 +5,7 @@ REPO="Wenhua-Li/evo-writing-skill"
 SKILL_NAME="evo-write"
 AGENT="generic"
 DEST=""
-REF="v0.4.0"
+REF="v0.5.0"
 FORCE=0
 DRY_RUN=0
 DOCTOR=0
@@ -19,7 +19,7 @@ Usage: install.sh [options]
 Options:
   --agent NAME     claude | codex | kimi | generic (default: generic)
   --dest DIR       Skills directory (overrides --agent)
-  --ref REF        Git ref or release tag to install (default: v0.3.2)
+  --ref REF        Git ref or release tag to install (default: v0.5.0)
   --force          Replace an existing evo-write installation after backup
   --dry-run        Show what would happen without changing files
   --doctor         Validate an existing installation
