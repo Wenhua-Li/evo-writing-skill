@@ -3,7 +3,7 @@ param(
   [ValidateSet('claude','codex','kimi','generic')]
   [string]$Agent = 'generic',
   [string]$Dest,
-  [string]$Ref = 'v0.5.0',
+  [string]$Ref = 'v0.6.0',
   [switch]$Force,
   [switch]$DryRun,
   [switch]$Doctor

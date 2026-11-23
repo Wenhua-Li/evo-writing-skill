@@ -35,19 +35,19 @@ Use evo-write. Rewrite this abstract to remove AI tells and defensive writing.
 Return only the revised English.
 ```
 
-Expected behavior:
+What you should get back:
 
-- no long diagnostic report;
+- the revised text, with no diagnostic report attached;
 - no invented evidence;
-- no unapproved blocked wording or stock contrast patterns;
-- substantial paragraph rebuilding when light editing is insufficient;
-- necessary scope kept once.
+- no blocked wording or formulaic contrasts;
+- real paragraph rebuilding when light editing is not enough;
+- each necessary scope statement kept once.
 
-## 3. Hard language gate
+## 3. The language gate
 
-EvoWrite reads `skill/references/style/plain-ec-english.md`, `skill/references/style/revision-gate.md`, and `skill/data/prose-gate.json` for every writing task. A blocked expression requires another rewrite before delivery.
+EvoWrite reads `skill/references/style/plain-ec-english.md`, `skill/references/style/revision-gate.md`, and `skill/data/prose-gate.json` for every writing task. A blocked expression means the text goes back for another rewrite before delivery.
 
-To run the deterministic checker yourself, pass the complete candidate text through standard input:
+To run the checker yourself, pass the complete candidate text through standard input:
 
 ```bash
 python tools/scripts/check_prose.py -
@@ -65,7 +65,7 @@ Use evo-write. Draft an introduction from these notes:
 Do not invent baselines or numerical results.
 ```
 
-If key information is missing, EvoWrite writes only what is supported and lists at most three missing details after the draft.
+If key information is missing, EvoWrite writes only what the notes support and lists at most three missing details after the draft.
 
 ## 5. Voice matching
 
@@ -77,12 +77,12 @@ Now rewrite this passage in the same voice:
 [paste target text]
 ```
 
-Voice matching cannot reintroduce wording blocked by the language gate.
+Voice matching cannot bring back wording the gate blocks.
 
 ## 6. Audit
 
 ```text
-Use evo-write in Audit mode. Check this paragraph for unsupported significance, robustness, scalability, efficiency, and optimality claims.
+Use evo-write in Audit mode. Check this paragraph for unsupported `significance`, `robustness`, `scalability`, `efficiency`, and `optimality` claims.
 ```
 
-Audit returns a report because you explicitly asked for one. Normal rewriting returns only the text. The Revised text in an Audit report must also pass the language gate.
+Audit returns a report because you asked for one; ordinary rewriting returns only the text. The Revised text inside an Audit report must pass the same gate.

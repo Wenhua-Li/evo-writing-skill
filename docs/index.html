@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EvoWrite — Natural Evolutionary Computation Paper Writing</title>
-  <meta name="description" content="Agent skill for natural, evidence-aware Evolutionary Computation paper writing.">
+  <meta name="description" content="Agent skill for natural Evolutionary Computation paper writing, with the evidence kept intact.">
   <style>
     :root{--bg:#020617;--panel:#0f172a;--panel2:#111827;--text:#e2e8f0;--muted:#94a3b8;--teal:#14b8a6;--cyan:#38bdf8;--line:#1e293b;--soft:#5eead4;--radius:24px}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,#134e4a66,transparent 34%),radial-gradient(circle at 8% 20%,#38bdf820,transparent 28%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.65}
@@ -33,8 +33,8 @@
       <div>
         <span class="pill fade">Agent Skill for Evolutionary Computation</span>
         <h1 class="fade d1">EvoWrite</h1>
-        <p class="lead fade d2">Natural, evidence-aware writing for EC papers.</p>
-        <p class="muted fade d2">Distilled from 1,517 TEVC papers (1997–2023). EvoWrite removes AI tells and defensive prose while preserving claims, evidence, EC terminology, and your voice.</p>
+        <p class="lead fade d2">Natural writing for EC papers, with the evidence kept intact.</p>
+        <p class="muted fade d2">Built from 1,517 TEVC papers (1997–2023). EvoWrite removes AI tells and defensive prose while keeping claims, evidence, EC terminology, and your voice unchanged.</p>
         <div class="cta fade d3"><a class="btn primary" href="#install">Install EvoWrite</a><a class="btn secondary" href="#cases">See cases</a><a class="btn secondary" href="https://github.com/Wenhua-Li/evo-writing-skill">GitHub</a></div>
         <div class="stats fade d3"><div class="stat"><b>1,517</b><span>TEVC papers</span></div><div class="stat"><b>150</b><span>reviewed exemplars</span></div><div class="stat"><b>0</b><span>invented evidence</span></div></div>
       </div>
@@ -43,7 +43,7 @@
 
     <section id="cases">
       <h2 class="sectionTitle">See what changes</h2>
-      <p class="sectionLead">Real behavior from the public verification path: fewer AI tells, no defensive disclaimer, and no invented evidence.</p>
+      <p class="sectionLead">From the public verification cases: fewer AI tells, no defensive disclaimers, no invented evidence.</p>
       <div class="tabs"><button class="tab active" data-case="intro">Introduction</button><button class="tab" data-case="audit">Overclaim</button><button class="tab" data-case="cost">Cost claim</button></div>
       <div class="grid2">
         <div class="card"><h3>Before</h3><p id="beforeText" class="quote bad">With the rapid development of evolutionary computation, large-scale multiobjective optimization has become a hot topic. It is worth noting that our proposed method may potentially significantly outperform state-of-the-art algorithms, although we do not claim that it is universally optimal for all problems.</p></div>
@@ -58,13 +58,13 @@
         <div class="card useCard"><h3>Rewrite</h3><p>Remove AI tells, boilerplate, repetitive transitions, and defensive framing from an existing EC draft.</p></div>
         <div class="card useCard"><h3>Draft</h3><p>Turn research notes into prose without inventing baselines, citations, statistics, or outcomes.</p></div>
         <div class="card useCard"><h3>Voice match</h3><p>Match sentence rhythm, terminology, punctuation, and directness from your own writing sample.</p></div>
-        <div class="card useCard"><h3>Audit</h3><p>Check significance, robustness, scalability, efficiency, optimality, and cost claims only when requested.</p></div>
+        <div class="card useCard"><h3>Audit</h3><p>Check claimed robustness to perturbations, plus significance, scalability, efficiency, optimality, and cost claims, only when requested.</p></div>
       </div>
     </section>
 
     <section>
       <h2 class="sectionTitle">Built for EC evidence</h2>
-      <p class="sectionLead">A generic humanizer can make prose smoother. EvoWrite also checks whether the claim belongs to the right EC evidence category.</p>
+      <p class="sectionLead">A generic humanizer can make prose smoother. EvoWrite also checks whether each claim has the EC evidence it needs.</p>
       <div class="steps"><div class="step"><b>Preserve</b><span>claims, citations, values, negative results</span></div><div class="step"><b>Remove</b><span>AI tells and boilerplate</span></div><div class="step"><b>Rewrite</b><span>defensive framing into positive scope</span></div><div class="step"><b>Calibrate</b><span>FEs, runtime, convergence, diversity, feasibility</span></div><div class="step"><b>Return</b><span>natural paper text by default</span></div></div>
       <p style="margin-top:24px"><span class="domain">multiobjective</span><span class="domain">many-objective</span><span class="domain">constrained</span><span class="domain">dynamic</span><span class="domain">expensive</span><span class="domain">surrogate-assisted</span><span class="domain">large-scale</span><span class="domain">multimodal</span><span class="domain">combinatorial</span><span class="domain">neuroevolution</span></p>
     </section>

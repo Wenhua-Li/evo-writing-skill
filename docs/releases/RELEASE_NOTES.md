@@ -1,3 +1,24 @@
+# Release Notes — v0.6.0
+
+## Summary
+
+EvoWrite v0.6.0 changes no rules. This release rewrites the project's own user-facing prose — the skill description, both READMEs, and the documentation site — using the same gate the skill applies to papers. The public text no longer reads like the AI marketing copy the skill exists to remove.
+
+## What changed
+
+- `SKILL.md` description, `README.md`, `README.zh-CN.md`, `docs/quickstart.md`, `docs/comparison.md`, and the `docs` site pages rewritten in plain language; facts, numbers, commands, and quoted rule lists are unchanged.
+- The rewritten English passes `tools/scripts/check_prose.py`; the intentionally bad Before examples stay, because demonstrating them is the point of the product.
+- Skill behavior, gate rules, references, examples, and data are identical to v0.5.0.
+
+## Compatibility
+
+- Skill name remains `evo-write`.
+- No behavior change: upgrading updates documentation and installer defaults only.
+- Installers default to `v0.6.0`.
+- The checker still uses only the Python standard library.
+
+---
+
 # Release Notes — v0.5.0
 
 ## Summary

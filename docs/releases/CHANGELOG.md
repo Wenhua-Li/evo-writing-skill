@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.6.0
+
+### Changed
+
+- 用 Skill 自身的重写规则改写项目对外文案:SKILL.md description、双 README、docs 指南与站点页面,去除 AI 腔词汇、宣传措辞和格式化对比,事实、数字与命令保持不变。
+- 改写后的英文文案通过 `tools/scripts/check_prose.py` 检查;Before 演示文本作为反例保留。
+- Skill 规则、参考资料、示例与数据与 v0.5.0 完全一致,无行为变化。
+- 安装器默认版本升级为 `v0.6.0`。
+
 ## v0.5.0
 
 ### Changed

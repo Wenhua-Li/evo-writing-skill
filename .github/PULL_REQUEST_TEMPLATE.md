@@ -5,7 +5,7 @@
 ## Verification
 
 - [ ] `python -m py_compile tools/scripts/*.py`
-- [ ] `python tools/scripts/build_release.py --root . --version v0.5.0`
+- [ ] `python tools/scripts/build_release.py --root . --version v0.6.0`
 - [ ] Added or updated an example/behavior case if behavior changed
 
 ## Notes

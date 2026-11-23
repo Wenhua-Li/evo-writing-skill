@@ -1,9 +1,9 @@
 ---
 name: evo-write
 description: >-
-  Plain, natural, evidence-aware writing and humanizing for Evolutionary Computation papers. Use EvoWrite for TEVC/EC/EA/EMO abstracts, introductions, related work, methods, experiments, conclusions, full-section rewrites, drafting from notes, author voice matching, and pre-submission checks. It rebuilds AI-sounding prose instead of lightly polishing it, removes software metaphors, inflated wording, stock contrasts, and repeated LLM phrasing, and applies a mandatory language gate before delivery while preserving facts, evidence, and standard EC terminology. Returns English paper text by default; diagnostics are provided only when requested. Never fabricate citations, experiments, numbers, statistical tests, complexity results, theorems, or conclusions.
+  Rewrites Evolutionary Computation papers so they read like a careful researcher wrote them. Use EvoWrite for TEVC/EC/EA/EMO abstracts, introductions, related work, methods, experiments, and conclusions, for full-section rewrites, drafting from notes, matching an author's voice, and pre-submission checks. AI-sounding paragraphs are rebuilt from the research meaning: software metaphors, inflated wording, formulaic contrasts, and repeated LLM phrasing are removed, and every draft must pass a fixed word-and-structure gate before delivery. Facts, numbers, citations, and standard EC terminology are preserved; missing evidence is never invented, including citations, experiments, results, statistical tests, theorems, and conclusions. Output is English paper text; a diagnostic report is written only when asked.
 metadata:
-  version: "0.5.0"
+  version: "0.6.0"
 ---
 
 # EvoWrite
